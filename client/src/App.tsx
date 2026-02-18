@@ -1,4 +1,4 @@
-import rawData from './data/sample.json'
+import rawData from '../../sample.json'
 import type { BenchmarkData } from './types'
 import { ThemeProvider } from './context/theme'
 import Header from './components/Header'
