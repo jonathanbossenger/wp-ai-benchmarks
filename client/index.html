@@ -6,6 +6,12 @@
     <meta name="description" content="WordPress AI benchmark results comparing model performance across knowledge and code execution tasks." />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
     <title>WP AI Benchmarks</title>
+    <script>
+      const savedTheme = localStorage.getItem('theme')
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark)
+      document.documentElement.classList.toggle('dark', shouldUseDark)
+    </script>
   </head>
   <body>
     <div id="root"></div>

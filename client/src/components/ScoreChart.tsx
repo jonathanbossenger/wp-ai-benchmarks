@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import type { ModelData } from '../types'
+import { useTheme } from '../context/theme'
 
 interface Props {
   models: Record<string, ModelData>
@@ -23,6 +24,7 @@ const SCORE_CATEGORIES = [
 ] as const
 
 export default function ScoreChart({ models, colors }: Props) {
+  const { isDark } = useTheme()
   const modelEntries = Object.entries(models)
 
   const data = SCORE_CATEGORIES.map(({ key, label }) => {
@@ -33,25 +35,31 @@ export default function ScoreChart({ models, colors }: Props) {
     return entry
   })
 
+  const gridColor = isDark ? '#374151' : '#f3f4f6'
+  const tickColor = isDark ? '#6b7280' : '#9ca3af'
+  const tooltipStyle = isDark
+    ? { backgroundColor: '#1f2937', border: '1px solid #374151', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.3)', color: '#f9fafb' }
+    : { borderRadius: '8px', border: '1px solid #e5e7eb', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.05)' }
+
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-      <h2 className="text-lg font-bold text-gray-900 mb-6">Score Comparison</h2>
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+      <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Score Comparison</h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#f3f4f6" />
-          <XAxis dataKey="category" tick={{ fontSize: 13, fill: '#6b7280' }} axisLine={false} tickLine={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke={gridColor} />
+          <XAxis dataKey="category" tick={{ fontSize: 13, fill: tickColor }} axisLine={false} tickLine={false} />
           <YAxis
             domain={[0, 100]}
-            tickFormatter={(v) => `${v}%`}
-            tick={{ fontSize: 12, fill: '#9ca3af' }}
+            tickFormatter={(value) => `${value}%`}
+            tick={{ fontSize: 12, fill: tickColor }}
             axisLine={false}
             tickLine={false}
           />
           <Tooltip
             formatter={(value) => [`${value}%`]}
-            contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.05)' }}
+            contentStyle={tooltipStyle}
           />
-          <Legend wrapperStyle={{ fontSize: '13px', paddingTop: '16px' }} />
+          <Legend wrapperStyle={{ fontSize: '13px', paddingTop: '16px', color: isDark ? '#d1d5db' : '#374151' }} />
           {modelEntries.map(([name], i) => (
             <Bar
               key={name}

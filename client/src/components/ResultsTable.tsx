@@ -20,6 +20,8 @@ const columnHelper = createColumnHelper<FlatResult>()
 
 const PASS_THRESHOLD = 0.99
 
+const SELECT_CLASS = 'text-sm border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-1.5 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-[#3858e9]/30'
+
 function ScoreBadge({ score, type }: { score: number; type: string }) {
   if (type === 'knowledge') {
     const pass = score >= PASS_THRESHOLD
@@ -45,35 +47,35 @@ export default function ResultsTable({ models }: Props) {
 
   const modelNames = useMemo(() => Object.keys(models), [models])
 
-  const flatData = useMemo<FlatResult[]>(() => {
-    const rows: FlatResult[] = []
-    Object.entries(models).forEach(([modelName, modelData]) => {
-      modelData.results.forEach((result) => {
-        rows.push({
+  const flatData = useMemo<FlatResult[]>(
+    () =>
+      Object.entries(models).flatMap(([modelName, modelData]) =>
+        modelData.results.map((result) => ({
           test_id: result.test_id,
           type: result.type,
           model: modelName,
           score: result.type === 'knowledge' ? result.score : result.correctness,
-        })
-      })
-    })
-    return rows
-  }, [models])
+        })),
+      ),
+    [models],
+  )
 
-  const filteredData = useMemo(() => {
-    return flatData.filter((row) => {
-      if (typeFilter !== 'all' && row.type !== typeFilter) return false
-      if (modelFilter !== 'all' && row.model !== modelFilter) return false
-      return true
-    })
-  }, [flatData, typeFilter, modelFilter])
+  const filteredData = useMemo(
+    () =>
+      flatData.filter(
+        (row) =>
+          (typeFilter === 'all' || row.type === typeFilter) &&
+          (modelFilter === 'all' || row.model === modelFilter),
+      ),
+    [flatData, typeFilter, modelFilter],
+  )
 
   const columns = useMemo(
     () => [
       columnHelper.accessor('test_id', {
         header: 'Test ID',
         cell: (info) => (
-          <span className="font-mono text-xs text-gray-600">{info.getValue()}</span>
+          <span className="font-mono text-xs text-gray-600 dark:text-gray-300">{info.getValue()}</span>
         ),
       }),
       columnHelper.accessor('type', {
@@ -82,8 +84,8 @@ export default function ResultsTable({ models }: Props) {
           <span
             className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
               info.getValue() === 'knowledge'
-                ? 'bg-purple-50 text-purple-700'
-                : 'bg-blue-50 text-blue-700'
+                ? 'bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400'
+                : 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400'
             }`}
           >
             {info.getValue()}
@@ -93,7 +95,7 @@ export default function ResultsTable({ models }: Props) {
       }),
       columnHelper.accessor('model', {
         header: 'Model',
-        cell: (info) => <span className="text-sm text-gray-700">{info.getValue()}</span>,
+        cell: (info) => <span className="text-sm text-gray-700 dark:text-gray-200">{info.getValue()}</span>,
         enableSorting: false,
       }),
       columnHelper.accessor('score', {
@@ -115,33 +117,25 @@ export default function ResultsTable({ models }: Props) {
   })
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-        <h2 className="text-lg font-bold text-gray-900">
+        <h2 className="text-lg font-bold text-gray-900 dark:text-white">
           Results
-          <span className="ml-2 text-sm font-normal text-gray-400">
+          <span className="ml-2 text-sm font-normal text-gray-400 dark:text-gray-500">
             ({filteredData.length} rows)
           </span>
         </h2>
         <div className="flex gap-2">
-          <select
-            className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#3858e9]/30"
-            value={typeFilter}
-            onChange={(e) => setTypeFilter(e.target.value)}
-          >
+          <select className={SELECT_CLASS} value={typeFilter} onChange={(event) => setTypeFilter(event.target.value)}>
             <option value="all">All Types</option>
             <option value="knowledge">Knowledge</option>
             <option value="execution">Execution</option>
           </select>
-          <select
-            className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#3858e9]/30"
-            value={modelFilter}
-            onChange={(e) => setModelFilter(e.target.value)}
-          >
+          <select className={SELECT_CLASS} value={modelFilter} onChange={(event) => setModelFilter(event.target.value)}>
             <option value="all">All Models</option>
-            {modelNames.map((m) => (
-              <option key={m} value={m}>
-                {m}
+            {modelNames.map((modelName) => (
+              <option key={modelName} value={modelName}>
+                {modelName}
               </option>
             ))}
           </select>
@@ -152,12 +146,12 @@ export default function ResultsTable({ models }: Props) {
         <table className="w-full text-sm">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
-              <tr key={headerGroup.id} className="border-b border-gray-100">
+              <tr key={headerGroup.id} className="border-b border-gray-100 dark:border-gray-700">
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
-                    className={`text-left py-3 px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider ${
-                      header.column.getCanSort() ? 'cursor-pointer select-none hover:text-gray-600' : ''
+                    className={`text-left py-3 px-4 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider ${
+                      header.column.getCanSort() ? 'cursor-pointer select-none hover:text-gray-600 dark:hover:text-gray-300' : ''
                     }`}
                     onClick={header.column.getToggleSortingHandler()}
                   >
@@ -178,7 +172,7 @@ export default function ResultsTable({ models }: Props) {
             {table.getRowModel().rows.map((row) => (
               <tr
                 key={row.id}
-                className="border-b border-gray-50 hover:bg-gray-50/60 transition-colors"
+                className="border-b border-gray-50 dark:border-gray-700/50 hover:bg-gray-50/60 dark:hover:bg-gray-700/50 transition-colors"
               >
                 {row.getVisibleCells().map((cell) => (
                   <td key={cell.id} className="py-3 px-4">
