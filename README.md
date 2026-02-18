@@ -17,6 +17,8 @@ Built with React, Vite, Recharts, and TanStack Table. Displays per-model score c
 
 See [`client/README.md`](client/README.md) for local development instructions.
 
+**Live:** https://jonathanbossenger.github.io/wp-ai-benchmarks/
+
 Deployed to GitHub Pages via GitHub Actions on every push to `main`.
 
 ## Data
