@@ -1,0 +1,983 @@
+{
+  "metadata": {
+    "suite": "wp-core-v1",
+    "grader": {
+      "kind": "docker",
+      "image": "ghcr.io/wordpress/wp-bench-grader:latest",
+      "container_name": "wp-bench-grader",
+      "url": null,
+      "concurrency": 4,
+      "timeout_seconds": 90,
+      "wp_env_dir": "/Users/jonathanbossenger/development/projects/wp-bench/runtime"
+    },
+    "dataset": {
+      "source": "local",
+      "name": "wp-core-v1",
+      "revision": null,
+      "split": "test",
+      "cache_dir": null
+    }
+  },
+  "models": {
+    "claude-opus-4-6": {
+      "config": {
+        "kind": "openai",
+        "name": "claude-opus-4-6",
+        "temperature": 0.0,
+        "max_tokens": null,
+        "top_p": null,
+        "request_timeout": 300.0
+      },
+      "scores": {
+        "knowledge": 0.8333333333333334,
+        "correctness": 0.5069458333333333,
+        "quality": 0.0,
+        "overall": 0.4528
+      },
+      "results": [
+        {
+          "test_id": "k-abilities-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockprocessor-attrs-001",
+          "type": "knowledge",
+          "answer": "A",
+          "correct": false,
+          "score": 0.0
+        },
+        {
+          "test_id": "k-abilities-003",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": false,
+          "score": 0.0
+        },
+        {
+          "test_id": "k-abilities-002",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": false,
+          "score": 0.0
+        },
+        {
+          "test_id": "k-bindings-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-bindings-002",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blocks-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-bindings-editor-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockapi-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-visibility-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-accordion-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockhooks-context-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockprocessor-001",
+          "type": "knowledge",
+          "answer": "I need to be careful here. As of my knowledge cutoff in April 2025, WordPress 6.9 has not been released yet, and I'm not aware of a `WP_Block_Processor` class or a method called `extract_block()` being replaced in WordPress core.\n\nThis question appears to reference features or changes that either don't exist in my training data or may be fabricated. However, given that I must choose an answer, let me reason about the naming conventions WordPress typically uses.\n\nWordPress tends to use descriptive method names. Among the choices, \"extract_current_block()\" (B) follows WordPress naming patterns but is somewhat redundant. \"extract_full_block_and_advance()\" (C) is very descriptive and follows the pattern of methods that both return data and advance a cursor position.\n\nBased on the question's description of a method that \"returns a parsed block AND advances the cursor,\" option C seems most fitting as it explicitly describes both actions in its name.\n\nC",
+          "correct": false,
+          "score": 0.0
+        },
+        {
+          "test_id": "k-blockhooks-postcontent-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockhooks-ignored-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockhooks-context-002",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockhooks-multiple-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-transients-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-object-cache-found-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-cache-salted-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-dataviews-locked-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-dataviews-readonly-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-dataviews-groupby-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-dataviews-getelements-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-meta-gotcha-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-font-library-disable-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-hooks-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-hooks-002",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-hooks-003",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-html-script-reject-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-html-serialize-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-interactivity-attach-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-interactivity-module-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": false,
+          "score": 0.0
+        },
+        {
+          "test_id": "k-interactivity-router-attr-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-utf8-fallback-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-queries-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-queries-002",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-rest-001",
+          "type": "knowledge",
+          "answer": "The default namespace prefix for WordPress core REST API endpoints is **`wp/v2`**.\n\nIf you're looking for a specific letter choice, please provide the multiple-choice options and I'll select the correct one.",
+          "correct": false,
+          "score": 0.0
+        },
+        {
+          "test_id": "k-rest-002",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-roles-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-security-002",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-security-001",
+          "type": "knowledge",
+          "answer": "The answer is likely referring to `esc_html()`.\n\nIf the choices were provided, the correct answer would be the one corresponding to **`esc_html()`**.",
+          "correct": false,
+          "score": 0.0
+        },
+        {
+          "test_id": "e-block-processor-count-001",
+          "type": "execution",
+          "code": "<?php\n\nfunction wpbp_count_block_types($html) {\n    $processor = new WP_Block_Processor($html);\n    $counts = array();\n\n    while ($processor->next_token()) {\n        $block_name = $processor->get_block_name();\n\n        if (empty($block_name) || $block_name === 'core/freeform') {\n            continue;\n        }\n\n        if (isset($counts[$block_name])) {\n            $counts[$block_name]++;\n        } else {\n            $counts[$block_name] = 1;\n        }\n    }\n\n    return $counts;\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-abilities-001",
+          "type": "execution",
+          "code": "<?php\n\nadd_action('wp_abilities_api_categories_init', function () {\n    wp_register_ability_category('site-tools', [\n        'label'       => 'Site Tools',\n        'description' => 'Tools for site management and maintenance.',\n    ]);\n});\n\nadd_action('wp_abilities_api_init', function () {\n    wp_register_ability('site-tools/clear-cache', [\n        'label'               => 'Clear Cache',\n        'description'         => 'Clears all site caches.',\n        'category'            => 'site-tools',\n        'permission_callback' => function () {\n            return current_user_can('manage_options');\n        },\n        'execute_callback'    => function () {\n            return ['status' => 'cleared'];\n        },\n        'meta'                => [\n            'show_in_rest' => true,\n        ],\n    ]);\n});",
+          "correctness": 0.6667,
+          "quality": null
+        },
+        {
+          "test_id": "e-bindings-001",
+          "type": "execution",
+          "code": "<?php\n\nadd_action( 'init', function () {\n    register_block_bindings_source( 'myplugin/meta-caption', array(\n        'label'              => __( 'Featured Image Caption', 'myplugin' ),\n        'uses_context'       => array( 'postId' ),\n        'get_value_callback' => function ( array $source_args, WP_Block $block_instance, string $attribute_name ) {\n            $post_id = $block_instance->context['postId'] ?? get_the_ID();\n\n            if ( ! $post_id ) {\n                return null;\n            }\n\n            $caption = get_post_meta( $post_id, 'featured_image_caption', true );\n\n            return $caption ? $caption : null;\n        },\n    ) );\n} );",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-cache-false-hit-001",
+          "type": "execution",
+          "code": "function wpbp_cached_flag() {\n    $found = false;\n    $cached = wp_cache_get( 'flag', 'wpbp-cache-flag', false, $found );\n\n    if ( $found ) {\n        return $cached;\n    }\n\n    // Compute the value (which happens to be false)\n    $value = false;\n\n    wp_cache_set( 'flag', $value, 'wpbp-cache-flag' );\n\n    return $value;\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-block-hooks-conditional-001",
+          "type": "execution",
+          "code": "<?php\n\nadd_filter( 'hooked_block_types', function ( array $hooked_blocks, string $relative_position, string $anchor_block, WP_Block_Template $context = null ): array {\n    if ( 'after' === $relative_position && 'core/post-title' === $anchor_block ) {\n        if ( is_single() && get_post_type() === 'post' ) {\n            $hooked_blocks[] = 'core/paragraph';\n        }\n    }\n    return $hooked_blocks;\n}, 10, 4 );\n\nadd_filter( 'hooked_block_core/paragraph', function ( array $parsed_block, string $hooked_block_type, string $relative_position, array $parsed_anchor_block, $context ): array {\n    if ( 'core/post-title' === $parsed_anchor_block['blockName'] && 'after' === $relative_position ) {\n        if ( is_single() && get_post_type() === 'post' ) {\n            $parsed_block['attrs']            = array();\n            $parsed_block['innerHTML']        = '<p>Hooked CTA</p>';\n            $parsed_block['innerContent']     = array( '<p>Hooked CTA</p>' );\n        }\n    }\n    return $parsed_block;\n}, 10, 5 );",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-meta-query-zero-001",
+          "type": "execution",
+          "code": "function wpbp_zero_price_products() {\n    $args = array(\n        'post_type'      => 'product',\n        'post_status'    => 'publish',\n        'posts_per_page' => -1,\n        'meta_query'     => array(\n            array(\n                'key'     => 'price_cents',\n                'value'   => 0,\n                'compare' => '=',\n                'type'    => 'NUMERIC',\n            ),\n        ),\n    );\n\n    return new WP_Query( $args );\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-font-library-disable-001",
+          "type": "execution",
+          "code": "<?php\nadd_filter( 'block_editor_settings_all', function( $settings ) {\n    $settings['fontLibraryEnabled'] = false;\n    return $settings;\n} );",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-hooks-001",
+          "type": "execution",
+          "code": "<?php\n\nadd_filter('manage_posts_columns', 'add_featured_column');\nfunction add_featured_column($columns) {\n    $columns['featured'] = esc_html__('Featured');\n    return $columns;\n}\n\nadd_action('manage_posts_custom_column', 'populate_featured_column', 10, 2);\nfunction populate_featured_column($column, $post_id) {\n    if ($column === 'featured') {\n        $is_featured = get_post_meta($post_id, '_is_featured', true);\n        if ($is_featured === '1') {\n            echo esc_html('Yes');\n        } else {\n            echo esc_html('No');\n        }\n    }\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-abilities-cache-001",
+          "type": "execution",
+          "code": "<?php\n/**\n * Plugin Name: Demo Get Movies Ability\n * Description: Registers an Abilities API ability that returns a cached list of published movie titles.\n */\n\n/**\n * Register the 'movies' category on the categories init hook.\n */\nadd_action( 'wp_abilities_api_categories_init', 'demo_register_movies_category' );\n\nfunction demo_register_movies_category() {\n    wp_register_ability_category(\n        'movies',\n        array(\n            'label'       => __( 'Movies', 'demo-movies' ),\n            'description' => __( 'Abilities related to movie data.', 'demo-movies' ),\n        )\n    );\n}\n\n/**\n * Register the 'demo/get-movies' ability on the abilities init hook.\n */\nadd_action( 'wp_abilities_api_init', 'demo_register_get_movies_ability' );\n\nfunction demo_register_get_movies_ability() {\n    wp_register_ability(\n        'demo/get-movies',\n        array(\n            'category'            => 'movies',\n            'description'         => __( 'Returns a cached list of published movie titles, optionally filtered by genre.', 'demo-movies' ),\n            'input_schema'        => array(\n                'type'       => 'object',\n                'properties' => array(\n                    'genre' => array(\n                        'type'        => 'string',\n                        'description' => __( 'Optional genre to filter movies by.', 'demo-movies' ),\n                    ),\n                ),\n                'required'           => array(),\n                'additionalProperties' => false,\n            ),\n            'output_schema'       => array(\n                'type'  => 'array',\n                'items' => array(\n                    'type' => 'string',\n                ),\n            ),\n            'permission_callback' => 'demo_get_movies_permission_callback',\n            'callback'            => 'demo_get_movies_callback',\n            'meta'                => array(\n                'show_in_rest' => true,\n            ),\n        )\n    );\n}\n\n/**\n * Permission callback: require the user to be logged in and have the 'read' capability.\n *\n * @return bool|WP_Error\n */\nfunction demo_get_movies_permission_callback() {\n    if ( ! is_user_logged_in() ) {\n        return new WP_Error(\n            'rest_not_logged_in',\n            __( 'You must be logged in to use this ability.', 'demo-movies' ),\n            array( 'status' => 401 )\n        );\n    }\n\n    if ( ! current_user_can( 'read' ) ) {\n        return new WP_Error(\n            'rest_forbidden',\n            __( 'You do not have permission to use this ability.', 'demo-movies' ),\n            array( 'status' => 403 )\n        );\n    }\n\n    return true;\n}\n\n/**\n * Ability callback: return a cached list of published movie titles.\n *\n * Uses wp_cache_get_salted / wp_cache_set_salted with the post last_changed value\n * as the salt, in the 'post-queries' cache group.\n *\n * @param array $input The validated input data.\n * @return string[]|WP_Error Array of movie title strings.\n */\nfunction demo_get_movies_callback( $input ) {\n    $genre = isset( $input['genre'] ) ? sanitize_text_field( $input['genre'] ) : '';\n\n    // Build a deterministic cache key based on the genre filter.\n    $cache_key_base = 'demo_get_movies' . ( $genre ? '_' . md5( $genre ) : '_all' );\n    $cache_group    = 'post-queries';\n\n    // Obtain the salt from post last_changed.\n    $last_changed = wp_cache_get_last_changed( 'posts' );\n\n    // Attempt to retrieve from salted cache.\n    $cached = wp_cache_get_salted( $cache_key_base, $cache_group, $last_changed );\n\n    if ( false !== $cached ) {\n        return $cached;\n    }\n\n    // Build the query for published 'movie' posts.\n    $query_args = array(\n        'post_type'      => 'movie',\n        'post_status'    => 'publish',\n        'posts_per_page' => -1,\n        'orderby'        => 'title',\n        'order'          => 'ASC',\n        'fields'         => 'ids',\n        'no_found_rows'  => true,\n    );\n\n    // If a genre was provided, add a taxonomy query (assumes 'genre' taxonomy on 'movie' CPT).\n    if ( $genre ) {\n        $query_args['tax_query'] = array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query\n            array(\n                'taxonomy' => 'genre',\n                'field'    => 'slug',\n                'terms'    => $genre,\n            ),\n        );\n    }\n\n    $query  = new WP_Query( $query_args );\n    $titles = array();\n\n    if ( $query->posts ) {\n        foreach ( $query->posts as $post_id ) {\n            $titles[] = get_the_title( $post_id );\n        }\n    }\n\n    // Store in salted cache.\n    wp_cache_set_salted( $cache_key_base, $titles, $cache_group, $last_changed );\n\n    return $titles;\n}\n\n/**\n * Polyfill: wp_cache_get_salted\n *\n * Retrieves a value from the object cache using a salted (versioned) key.\n *\n * @param string $key   Base cache key.\n * @param string $group Cache group.\n * @param string $salt  Salt value (e.g. last_changed timestamp).\n * @return mixed Cached value or false on miss.\n */\nif ( ! function_exists( 'wp_cache_get_salted' ) ) {\n    function wp_cache_get_salted( $key, $group, $salt ) {\n        $salted_key = $key . ':' . $salt;\n        return wp_cache_get( $salted_key, $group );\n    }\n}\n\n/**\n * Polyfill: wp_cache_set_salted\n *\n * Sets a value in the object cache using a salted (versioned) key.\n *\n * @param string $key    Base cache key.\n * @param mixed  $data   Data to cache.\n * @param string $group  Cache group.\n * @param string $salt   Salt value (e.g. last_changed timestamp).\n * @param int    $expire Optional. Expiration in seconds. Default 0 (no expiration).\n * @return bool True on success, false on failure.\n */\nif ( ! function_exists( 'wp_cache_set_salted' ) ) {\n    function wp_cache_set_salted( $key, $data, $group, $salt, $expire = 0 ) {\n        $salted_key = $key . ':' . $salt;\n        return wp_cache_set( $salted_key, $data, $group, $expire );\n    }\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-cache-get-multiple-001",
+          "type": "execution",
+          "code": "function wpbp_get_options_cached(array $keys): array {\n    $group = 'options';\n    $results = [];\n\n    // Build the list of keys to fetch\n    // wp_cache_get_multiple returns an array of key => value for hits,\n    // and key => false for misses. We need a sentinel to distinguish\n    // false cached values from actual misses.\n\n    // Unfortunately, wp_cache_get_multiple doesn't natively provide a \"miss list\".\n    // We need to use the individual wp_cache_get with the $found parameter\n    // to distinguish between a cached falsey value and a true cache miss.\n\n    $misses = [];\n    $cached = [];\n\n    // First, attempt to get all keys from cache using wp_cache_get_multiple\n    // wp_cache_get_multiple returns an associative array of key => value.\n    // Keys not found in cache are typically returned as false, but we cannot\n    // distinguish that from a legitimately cached false value.\n    //\n    // Strategy: Use wp_cache_get_multiple for a bulk fetch, then verify\n    // any falsey results individually with wp_cache_get($key, $group, false, &$found)\n    // to determine if they are true misses or cached falsey values.\n\n    $cache_results = wp_cache_get_multiple($keys, $group);\n\n    foreach ($keys as $key) {\n        if (array_key_exists($key, $cache_results) && $cache_results[$key] !== false) {\n            // Truthy (or non-false) cached value — definitely a hit\n            $cached[$key] = $cache_results[$key];\n        } else {\n            // Could be a cached false/falsey value or a genuine miss.\n            // Use wp_cache_get with $found to distinguish.\n            $found = false;\n            $value = wp_cache_get($key, $group, false, $found);\n\n            if ($found) {\n                // It was genuinely cached (even if the value is falsey)\n                $cached[$key] = $value;\n            } else {\n                // True cache miss\n                $misses[] = $key;\n            }\n        }\n    }\n\n    // For misses, fetch from get_option and populate cache\n    if (!empty($misses)) {\n        $fetched = [];\n        foreach ($misses as $key) {\n            $value = get_option($key);\n            $fetched[$key] = $value;\n            $cached[$key] = $value;\n        }\n\n        // Use wp_cache_set_multiple to store all missed values at once\n        // wp_cache_set_multiple expects an array of key => value pairs\n        if (function_exists('wp_cache_set_multiple')) {\n            wp_cache_set_multiple($fetched, $group);\n        } else {\n            // Fallback for older WordPress versions\n            foreach ($fetched as $key => $value) {\n                wp_cache_set($key, $value, $group);\n            }\n        }\n    }\n\n    // Build the results array preserving the order of the input keys\n    foreach ($keys as $key) {\n        if (array_key_exists($key, $cached)) {\n            $results[$key] = $cached[$key];\n        }\n    }\n\n    return $results;\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-html-serialize-001",
+          "type": "execution",
+          "code": "function wpbp_first_paragraph_html( $html ) {\n    $processor = WP_HTML_Processor::create_fragment( $html );\n\n    if ( null === $processor ) {\n        return '';\n    }\n\n    $found_p = false;\n    $depth = 0;\n    $output = '';\n\n    while ( $processor->next_token() ) {\n        $token_type = $processor->get_token_type();\n        $token_name = $processor->get_token_name();\n\n        if ( ! $found_p ) {\n            // Look for the first <p> start tag\n            if ( '#tag' === $token_type && 'P' === strtoupper( $token_name ) && ! $processor->is_tag_closer() ) {\n                $found_p = true;\n                $depth = 1;\n                $output .= $processor->serialize_token();\n            }\n            continue;\n        }\n\n        // We are inside the first <p> element\n        $output .= $processor->serialize_token();\n\n        if ( '#tag' === $token_type && 'P' === strtoupper( $token_name ) ) {\n            if ( $processor->is_tag_closer() ) {\n                $depth--;\n                if ( $depth <= 0 ) {\n                    break;\n                }\n            } else {\n                $depth++;\n            }\n        }\n    }\n\n    return $output;\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-js-dataset-roundtrip-001",
+          "type": "execution",
+          "code": "function wpbp_dataset_roundtrip($prop) {\n    $attr = wp_html_custom_data_attribute_name($prop);\n    $converted_prop = wp_js_dataset_name($attr);\n\n    return array(\n        'attr' => $attr,\n        'prop' => $converted_prop,\n    );\n}",
+          "correctness": 0.5,
+          "quality": null
+        },
+        {
+          "test_id": "e-html-safe-script-text-001",
+          "type": "execution",
+          "code": "function wpbp_replace_script_text($html, $replacement) {\n    if (stripos($replacement, '<script') !== false || stripos($replacement, '</script') !== false) {\n        return false;\n    }\n\n    $processor = new WP_HTML_Tag_Processor($html);\n\n    if (!$processor->next_tag('script')) {\n        return false;\n    }\n\n    $result = $processor->set_modifiable_text($replacement);\n\n    if (!$result) {\n        return false;\n    }\n\n    return $processor->get_updated_html();\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-html-first-url-001",
+          "type": "execution",
+          "code": "function wpbp_first_url( $html ) {\n\t$url = get_url_in_content( $html );\n\n\tif ( false === $url ) {\n\t\treturn '';\n\t}\n\n\treturn $url;\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-block-bindings-aria-001",
+          "type": "execution",
+          "code": "<?php\n/**\n * Plugin Name: Button Block Bindings - ariaLabel Support\n * Description: Extends Block Bindings so core/button can bind its ariaLabel attribute to post meta.\n * Version: 1.0.0\n */\n\n// Prevent direct access.\nif ( ! defined( 'ABSPATH' ) ) {\n\texit;\n}\n\n/**\n * Register the post meta key used for binding.\n */\nadd_action( 'init', function () {\n\tregister_post_meta( '', 'button_label_meta', array(\n\t\t'show_in_rest'  => true,\n\t\t'single'        => true,\n\t\t'type'          => 'string',\n\t\t'default'       => '',\n\t\t'auth_callback' => function () {\n\t\t\treturn current_user_can( 'edit_posts' );\n\t\t},\n\t) );\n} );\n\n/**\n * Allow ariaLabel as a supported bound attribute for core/button.\n *\n * The filter name follows the pattern:\n *   block_bindings_supported_attributes_{block_name}\n * where slashes in the block name are replaced with underscores in some\n * implementations, but the canonical WP filter uses the exact block name.\n *\n * We hook both possible filter name variants to be safe.\n */\nadd_filter( 'block_bindings_supported_attributes_core/button', function ( $attributes ) {\n\tif ( ! is_array( $attributes ) ) {\n\t\t$attributes = array();\n\t}\n\tif ( ! in_array( 'ariaLabel', $attributes, true ) ) {\n\t\t$attributes[] = 'ariaLabel';\n\t}\n\treturn $attributes;\n} );\n\n// Also hook the underscore variant in case the filter name is normalised.\nadd_filter( 'block_bindings_supported_attributes_core_button', function ( $attributes ) {\n\tif ( ! is_array( $attributes ) ) {\n\t\t$attributes = array();\n\t}\n\tif ( ! in_array( 'ariaLabel', $attributes, true ) ) {\n\t\t$attributes[] = 'ariaLabel';\n\t}\n\treturn $attributes;\n} );\n\n/**\n * Render the bound ariaLabel (and text) on the front end.\n *\n * Because WordPress Block Bindings (as of 6.5) only ships with a limited set\n * of supported attributes per block, ariaLabel may not be resolved\n * automatically even after the filter above. We therefore also use the\n * render_block_core/button filter to guarantee the bound value appears in the\n * front-end markup.\n */\nadd_filter( 'render_block_core/button', function ( $block_content, $block ) {\n\t// Check whether this block instance carries bindings metadata.\n\t$bindings = $block['attrs']['metadata']['bindings'] ?? array();\n\n\tif ( empty( $bindings ) ) {\n\t\treturn $block_content;\n\t}\n\n\t$post = get_post();\n\tif ( ! $post ) {\n\t\treturn $block_content;\n\t}\n\n\t// --- Handle ariaLabel binding -------------------------------------------\n\tif ( isset( $bindings['ariaLabel'] ) ) {\n\t\t$source = $bindings['ariaLabel']['source'] ?? '';\n\n\t\tif ( 'core/post-meta' === $source ) {\n\t\t\t$meta_key = $bindings['ariaLabel']['args']['key'] ?? '';\n\n\t\t\tif ( $meta_key ) {\n\t\t\t\t$raw_value      = get_post_meta( $post->ID, $meta_key, true );\n\t\t\t\t$sanitized_value = esc_attr( wp_strip_all_tags( $raw_value ) );\n\n\t\t\t\tif ( $sanitized_value ) {\n\t\t\t\t\t// If an aria-label already exists, replace it.\n\t\t\t\t\tif ( preg_match( '/aria-label=\"[^\"]*\"/', $block_content ) ) {\n\t\t\t\t\t\t$block_content = preg_replace(\n\t\t\t\t\t\t\t'/aria-label=\"[^\"]*\"/',\n\t\t\t\t\t\t\t'aria-label=\"' . $sanitized_value . '\"',\n\t\t\t\t\t\t\t$block_content\n\t\t\t\t\t\t);\n\t\t\t\t\t} else {\n\t\t\t\t\t\t// Insert aria-label into the <a> tag (the inner element of wp-block-button).\n\t\t\t\t\t\t$block_content = preg_replace(\n\t\t\t\t\t\t\t'/(<a\\b)/',\n\t\t\t\t\t\t\t'$1 aria-label=\"' . $sanitized_value . '\"',\n\t\t\t\t\t\t\t$block_content,\n\t\t\t\t\t\t\t1\n\t\t\t\t\t\t);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t// --- Handle text binding (ensure it also resolves) ----------------------\n\tif ( isset( $bindings['text'] ) ) {\n\t\t$source = $bindings['text']['source'] ?? '';\n\n\t\tif ( 'core/post-meta' === $source ) {\n\t\t\t$meta_key = $bindings['text']['args']['key'] ?? '';\n\n\t\t\tif ( $meta_key ) {\n\t\t\t\t$raw_value      = get_post_meta( $post->ID, $meta_key, true );\n\t\t\t\t$sanitized_text = esc_html( wp_strip_all_tags( $raw_value ) );\n\n\t\t\t\tif ( $sanitized_text ) {\n\t\t\t\t\t// Replace the link text content.\n\t\t\t\t\t$block_content = preg_replace(\n\t\t\t\t\t\t'/(<a\\b[^>]*>)(.*?)(<\\/a>)/s',\n\t\t\t\t\t\t'$1' . $sanitized_text . '$3',\n\t\t\t\t\t\t$block_content,\n\t\t\t\t\t\t1\n\t\t\t\t\t);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\treturn $block_content;\n}, 10, 2 );\n\n/**\n * Helper: programmatically create a test post that demonstrates the binding.\n *\n * Visit ?prove_button_binding=1 on the front end to see the rendered output.\n */\nadd_action( 'template_redirect', function () {\n\tif ( ! isset( $_GET['prove_button_binding'] ) ) {\n\t\treturn;\n\t}\n\n\t$meta_key   = 'button_label_meta';\n\t$meta_value = 'Accessible CTA Label';\n\n\t// Find or create a test post.\n\t$existing = get_posts( array(\n\t\t'post_type'  => 'post',\n\t\t'meta_key'   => '_button_binding_test',\n\t\t'meta_value' => '1',\n\t\t'numberposts' => 1,\n\t\t'post_status' => 'publish',\n\t) );\n\n\tif ( $existing ) {\n\t\t$post_id = $existing[0]->ID;\n\t} else {\n\t\t// Block markup with bindings metadata (no block.json modification).\n\t\t$block_markup = '<!-- wp:button {\"metadata\":{\"bindings\":{\"text\":{\"source\":\"core/post-meta\",\"args\":{\"key\":\"' . $meta_key . '\"}},\"ariaLabel\":{\"source\":\"core/post-meta\",\"args\":{\"key\":\"' . $meta_key . '\"}}}}} -->\n<div class=\"wp-block-button\"><a class=\"wp-block-button__link wp-element-button\" href=\"#\">Placeholder</a></div>\n<!-- /wp:button -->';\n\n\t\t$post_id = wp_insert_post( array(\n\t\t\t'post_title'   => 'Button Binding Test',\n\t\t\t'post_content' => $block_markup,\n\t\t\t'post_status'  => 'publish',\n\t\t\t'post_type'    => 'post',\n\t\t) );\n\n\t\tupdate_post_meta( $post_id, '_button_binding_test', '1' );\n\t}\n\n\t// Always refresh the meta value.\n\tupdate_post_meta( $post_id, $meta_key, $meta_value );\n\n\t// Render the post content through the block renderer.\n\t$post = get_post( $post_id );\n\tsetup_postdata( $post );\n\n\t$rendered = apply_filters( 'the_content', $post->post_content );\n\n\twp_reset_postdata();\n\n\t// Output proof.\n\theader( 'Content-Type: text/html; charset=utf-8' );\n\techo '<!DOCTYPE html><html><head><title>Button Binding Proof</title></head><body>';\n\techo '<h1>Block Bindings: core/button ariaLabel Proof</h1>';\n\techo '<h2>Rendered Block Output</h2>';\n\techo '<div class=\"rendered-output\">' . $rendered . '</div>';\n\techo '<h2>Raw HTML</h2>';\n\techo '<pre>' . esc_html( $rendered ) . '</pre>';\n\n\t// Verify.\n\t$has_aria_label = ( false !== strpos( $rendered, 'aria-label=\"' . esc_attr( wp_strip_all_tags( $meta_value ) ) . '\"' ) );\n\t$has_text       = ( false !== strpos( $rendered, '>' . esc_html( wp_strip_all_tags( $meta_value ) ) . '</a>' ) );\n\n\techo '<h2>Verification</h2>';\n\techo '<ul>';\n\techo '<li>aria-label bound from meta: <strong>' . ( $has_aria_label ? '✅ PASS' : '❌ FAIL' ) . '</strong></li>';\n\techo '<li>Button text bound from meta: <strong>' . ( $has_text ? '✅ PASS' : '❌ FAIL' ) . '</strong></li>';\n\techo '</ul>';\n\techo '</body></html>';\n\texit;\n} );",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-interactivity-router-replace-001",
+          "type": "execution",
+          "code": "<?php\nfunction wpbp_router_link( $url, $text ) {\n    $escaped_url  = esc_url( $url );\n    $escaped_text = esc_html( $text );\n\n    $rel = '';\n    $home_parts = wp_parse_url( home_url() );\n    $link_parts = wp_parse_url( $url );\n\n    $home_scheme = isset( $home_parts['scheme'] ) ? strtolower( $home_parts['scheme'] ) : '';\n    $home_host   = isset( $home_parts['host'] )   ? strtolower( $home_parts['host'] )   : '';\n    $link_scheme = isset( $link_parts['scheme'] ) ? strtolower( $link_parts['scheme'] ) : '';\n    $link_host   = isset( $link_parts['host'] )   ? strtolower( $link_parts['host'] )   : '';\n\n    $is_external = false;\n    if ( $link_host !== '' && ( $link_host !== $home_host || $link_scheme !== $home_scheme ) ) {\n        $is_external = true;\n    }\n\n    $rel_attr = $is_external ? ' rel=\"nofollow\"' : '';\n\n    return sprintf(\n        '<a href=\"%s\" data-wp-router-replace=\"true\" data-wp-router-prefetch=\"intent\"%s>%s</a>',\n        $escaped_url,\n        $rel_attr,\n        $escaped_text\n    );\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-meta-001",
+          "type": "execution",
+          "code": "function save_view_count( $post_id ) {\n    $current_count = get_post_meta( $post_id, '_view_count', true );\n\n    if ( $current_count === '' || $current_count === false ) {\n        $current_count = 0;\n    }\n\n    $new_count = (int) $current_count + 1;\n\n    update_post_meta( $post_id, '_view_count', $new_count );\n\n    return $new_count;\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-interactivity-client-nav-001",
+          "type": "execution",
+          "code": "<?php\n\n// Bootstrap WordPress\nrequire_once __DIR__ . '/wp-load.php';\n\n// Create a placeholder file for the script module\n$placeholder_file = __DIR__ . '/demo-nav-module.js';\nif (!file_exists($placeholder_file)) {\n    file_put_contents($placeholder_file, 'export default {};');\n}\n\n$placeholder_url = site_url('/demo-nav-module.js');\n\n// Register the script module\nwp_register_script_module('demo/nav', $placeholder_url, array(), '1.0.0');\n\n// Mark it as client-navigation-compatible\nwp_interactivity()->add_client_navigation_support_to_script_module('demo/nav');\n\n// Enqueue the script module so it gets printed\nwp_enqueue_script_module('demo/nav');\n\n// Capture the output of wp_print_script_modules\nob_start();\nwp_print_script_modules();\n$output = ob_get_clean();\n\necho \"=== Script Module Output ===\\n\";\necho $output . \"\\n\";\n\n// Verify the output contains the expected data-wp-router-options attribute\n$dom = new DOMDocument();\n// Suppress warnings for HTML5 tags\n@$dom->loadHTML('<html><head>' . $output . '</head></html>');\n\n$scripts = $dom->getElementsByTagName('script');\n$found = false;\n\nforeach ($scripts as $script) {\n    $src = $script->getAttribute('src');\n    $routerOptions = $script->getAttribute('data-wp-router-options');\n\n    if (strpos($src, 'demo-nav-module') !== false || $script->getAttribute('id') === 'demo/nav') {\n        echo \"=== Found script tag for demo/nav ===\\n\";\n        echo \"src: \" . $src . \"\\n\";\n        echo \"data-wp-router-options: \" . $routerOptions . \"\\n\";\n\n        if (!empty($routerOptions)) {\n            $decoded = json_decode($routerOptions, true);\n            if (isset($decoded['loadOnClientNavigation']) && $decoded['loadOnClientNavigation'] === true) {\n                echo \"\\n✅ PASS: data-wp-router-options contains loadOnClientNavigation: true\\n\";\n                $found = true;\n            }\n        }\n    }\n}\n\n// Also check via regex as a fallback verification\nif (!$found && preg_match('/data-wp-router-options/', $output)) {\n    echo \"\\n=== Regex verification ===\\n\";\n    if (preg_match('/data-wp-router-options=\"([^\"]*)\"/', $output, $matches)) {\n        $attr_value = html_entity_decode($matches[1]);\n        echo \"Attribute value: \" . $attr_value . \"\\n\";\n        $decoded = json_decode($attr_value, true);\n        if (isset($decoded['loadOnClientNavigation']) && $decoded['loadOnClientNavigation'] === true) {\n            echo \"\\n✅ PASS: data-wp-router-options contains loadOnClientNavigation: true\\n\";\n            $found = true;\n        }\n    }\n}\n\nif (!$found) {\n    // Check raw output for the attribute\n    if (strpos($output, 'loadOnClientNavigation') !== false) {\n        echo \"\\n✅ PASS: Output contains loadOnClientNavigation in data-wp-router-options\\n\";\n    } else {\n        echo \"\\n❌ FAIL: data-wp-router-options with loadOnClientNavigation true not found\\n\";\n        echo \"Raw output for debugging:\\n\" . $output . \"\\n\";\n    }\n}\n\n// Cleanup\nif (file_exists($placeholder_file)) {\n    unlink($placeholder_file);\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-rest-001",
+          "type": "execution",
+          "code": "<?php\n/**\n * Plugin Name: My Plugin Status Endpoint\n * Description: Registers a REST API endpoint that returns status and timestamp.\n * Version: 1.0.0\n */\n\nadd_action('rest_api_init', function () {\n    register_rest_route('myplugin/v1', '/status', array(\n        'methods'             => 'GET',\n        'callback'            => 'myplugin_status_endpoint',\n        'permission_callback' => '__return_true',\n    ));\n});\n\nfunction myplugin_status_endpoint(WP_REST_Request $request) {\n    $data = array(\n        'status'    => 'ok',\n        'timestamp' => time(),\n    );\n\n    return new WP_REST_Response($data, 200);\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-shortcode-001",
+          "type": "execution",
+          "code": "<?php\nfunction greeting_shortcode( $atts ) {\n    $atts = shortcode_atts(\n        array(\n            'name' => 'World',\n        ),\n        $atts,\n        'greeting'\n    );\n\n    return 'Hello, ' . esc_html( $atts['name'] ) . '!';\n}\nadd_shortcode( 'greeting', 'greeting_shortcode' );",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-wpquery-001",
+          "type": "execution",
+          "code": "function get_recent_news_posts() {\n    $args = array(\n        'post_type'      => 'post',\n        'post_status'    => 'publish',\n        'category_name'  => 'news',\n        'posts_per_page' => 5,\n        'orderby'        => 'date',\n        'order'          => 'DESC',\n    );\n\n    $query = new WP_Query( $args );\n\n    $posts = $query->posts;\n\n    wp_reset_postdata();\n\n    return $posts;\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-html-ie-conditional-001",
+          "type": "execution",
+          "code": "<?php\n\nfunction strip_ie_conditional_comments(string $html): string {\n    $result = '';\n    $length = strlen($html);\n    $pos = 0;\n\n    while ($pos < $length) {\n        // Find the next comment opening\n        $comment_start = strpos($html, '<!--', $pos);\n\n        if ($comment_start === false) {\n            // No more comments, append the rest\n            $result .= substr($html, $pos);\n            break;\n        }\n\n        // Check if this is a conditional comment <!--[if\n        $after_open = substr($html, $comment_start, 8); // <!--[if \n        $is_conditional = (strpos($after_open, '<!--[if') === 0);\n\n        if (!$is_conditional) {\n            // It's a regular comment; find its end and keep it\n            $comment_end = strpos($html, '-->', $comment_start + 4);\n            if ($comment_end === false) {\n                // Malformed comment, just append the rest\n                $result .= substr($html, $pos);\n                break;\n            }\n            $comment_end += 3; // include the -->\n            $result .= substr($html, $pos, $comment_end - $pos);\n            $pos = $comment_end;\n        } else {\n            // It's a conditional comment; we need to find <![endif]-->\n            // Append everything before the conditional comment\n            $result .= substr($html, $pos, $comment_start - $pos);\n\n            // Now find the closing <![endif]-->\n            $endif_marker = '<![endif]-->';\n            $endif_pos = strpos($html, $endif_marker, $comment_start);\n\n            if ($endif_pos === false) {\n                // Try alternate ending: just -->\n                // Some conditional comments end with just -->\n                // Also try <![endif]>\n                $endif_marker2 = '<![endif]>';\n                $endif_pos2 = strpos($html, $endif_marker2, $comment_start);\n\n                if ($endif_pos2 !== false) {\n                    $pos = $endif_pos2 + strlen($endif_marker2);\n                } else {\n                    // Fallback: find the next -->\n                    $fallback_end = strpos($html, '-->', $comment_start + 4);\n                    if ($fallback_end !== false) {\n                        $pos = $fallback_end + 3;\n                    } else {\n                        // No closing found, skip the rest\n                        $pos = $length;\n                    }\n                }\n            } else {\n                $pos = $endif_pos + strlen($endif_marker);\n            }\n        }\n    }\n\n    // Now process the result through WP_HTML_Tag_Processor to ensure valid output\n    // Actually, let's use WP_HTML_Tag_Processor to validate/return the cleaned HTML\n    $processor = new WP_HTML_Tag_Processor($result);\n    // Iterate through all tags to ensure the processor can parse it\n    while ($processor->next_tag()) {\n        // Just iterating to let the processor validate\n    }\n\n    return $result;\n}\n\n/**\n * Alternative implementation that uses WP_HTML_Tag_Processor more directly\n * by leveraging its bookmark and text manipulation capabilities.\n */\nfunction strip_ie_conditional_comments_v2(string $html): string {\n    // WP_HTML_Tag_Processor doesn't natively handle comments in a way\n    // that lets us distinguish conditional from regular comments.\n    // We use a character-by-character scanning approach without regex.\n\n    $output = '';\n    $len = strlen($html);\n    $i = 0;\n\n    while ($i < $len) {\n        // Look for '<!--[if' without regex\n        $next = strpos($html, '<!--[if', $i);\n\n        if ($next === false) {\n            $output .= substr($html, $i);\n            break;\n        }\n\n        // Append everything before the conditional comment\n        $output .= substr($html, $i, $next - $i);\n\n        // Find the end of the conditional comment block: <![endif]-->\n        $end_marker = '<![endif]-->';\n        $end_pos = strpos($html, $end_marker, $next);\n\n        if ($end_pos !== false) {\n            $i = $end_pos + strlen($end_marker);\n        } else {\n            // Try <![endif]>\n            $end_marker2 = '<![endif]>';\n            $end_pos2 = strpos($html, $end_marker2, $next);\n            if ($end_pos2 !== false) {\n                $i = $end_pos2 + strlen($end_marker2);\n            } else {\n                // Skip to end of a normal comment -->\n                $fallback = strpos($html, '-->', $next + 4);\n                if ($fallback !== false) {\n                    $i = $fallback + 3;\n                } else {\n                    $i = $len;\n                }\n            }\n        }\n    }\n\n    // Pass through WP_HTML_Tag_Processor to ensure we return valid HTML\n    $processor = new WP_HTML_Tag_Processor($output);\n    while ($processor->next_tag()) {\n        // Iterating ensures internal consistency\n    }\n    return $processor->get_updated_html();\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-rest-cache-salted-001",
+          "type": "execution",
+          "code": "<?php\n\n/**\n * REST endpoint /wp-json/demo/v1/books with salted cache.\n */\n\nadd_action('rest_api_init', function () {\n    register_rest_route('demo/v1', '/books', array(\n        'methods'             => WP_REST_Server::READABLE,\n        'callback'            => 'demo_books_endpoint_callback',\n        'permission_callback' => 'demo_books_permission_check',\n    ));\n});\n\n/**\n * Permission callback: require logged-in user with 'read' capability.\n */\nfunction demo_books_permission_check(WP_REST_Request $request) {\n    if (! current_user_can('read')) {\n        return new WP_Error(\n            'rest_forbidden',\n            __('You do not have permission to access this endpoint.'),\n            array('status' => 403)\n        );\n    }\n    return true;\n}\n\n/**\n * Build the salted cache key using wp_cache_get_last_changed.\n */\nfunction demo_books_get_cache_key() {\n    $last_changed = wp_cache_get_last_changed('posts');\n    return 'books_list_' . md5($last_changed);\n}\n\n/**\n * Endpoint callback: return published book titles with salted object cache.\n */\nfunction demo_books_endpoint_callback(WP_REST_Request $request) {\n    $group     = 'books-list';\n    $cache_key = demo_books_get_cache_key();\n\n    // Try salted cache get.\n    $data = wp_cache_get($cache_key, $group);\n\n    if (false === $data) {\n        $query = new WP_Query(array(\n            'post_type'      => 'book',\n            'post_status'    => 'publish',\n            'posts_per_page' => -1,\n            'fields'         => 'ids',\n            'no_found_rows'  => true,\n        ));\n\n        $data = array();\n\n        if (! empty($query->posts)) {\n            foreach ($query->posts as $post_id) {\n                $data[] = array(\n                    'id'    => (int) $post_id,\n                    'title' => get_the_title($post_id),\n                );\n            }\n        }\n\n        wp_cache_set($cache_key, $data, $group, HOUR_IN_SECONDS);\n    }\n\n    return rest_ensure_response($data);\n}\n\n/**\n * Invalidate the salted cache entry when a book is saved.\n */\nadd_action('save_post_book', 'demo_books_invalidate_cache', 10, 0);\n\nfunction demo_books_invalidate_cache() {\n    $group     = 'books-list';\n    $cache_key = demo_books_get_cache_key();\n    wp_cache_delete($cache_key, $group);\n\n    // Also bump last_changed so the salt itself rotates,\n    // ensuring any stale key is effectively orphaned.\n    wp_cache_set('last_changed', microtime(), 'posts');\n}\n\n/**\n * Invalidate the salted cache entry when any post is deleted\n * (covers book deletions as well).\n */\nadd_action('deleted_post', 'demo_books_invalidate_cache_on_delete', 10, 1);\n\nfunction demo_books_invalidate_cache_on_delete($post_id) {\n    $post_type = get_post_type($post_id);\n\n    // Always invalidate to be safe; the deleted_post hook fires for any post type.\n    $group     = 'books-list';\n    $cache_key = demo_books_get_cache_key();\n    wp_cache_delete($cache_key, $group);\n\n    // Bump last_changed so the salt rotates.\n    wp_cache_set('last_changed', microtime(), 'posts');\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-html-strip-scripts-001",
+          "type": "execution",
+          "code": "<?php\n\nfunction wpbp_strip_scripts($html) {\n    $processor = new WP_HTML_Tag_Processor($html);\n    \n    // Collect all script tag positions so we can remove them\n    // We need to find script tags and remove them entirely including their content\n    \n    // Since WP_HTML_Tag_Processor doesn't give us direct offset access for removal\n    // in a straightforward way, we'll use a different approach:\n    // We'll iterate through and build a list of regions to remove.\n    \n    // Strategy: Use WP_HTML_Tag_Processor to find each <script> tag,\n    // then use its bookmark capabilities to track positions.\n    // However, WP_HTML_Tag_Processor skips over the content of script tags\n    // automatically when moving to the next tag.\n    \n    // Alternative approach: We'll use the processor to find script tags\n    // and set a marker class, then do string-based removal of the marked tags.\n    // But that still uses string manipulation.\n    \n    // Best approach with WP_HTML_Tag_Processor:\n    // Find each script tag, get its bookmark, and use the internal\n    // document manipulation to remove it.\n    \n    // Actually, the cleanest approach: iterate and rebuild HTML without script tags.\n    // WP_HTML_Tag_Processor doesn't expose raw offsets publicly in a stable API,\n    // but we can use get_updated_html() after manipulating tags.\n    \n    // The trick: WP_HTML_Tag_Processor can't remove tags directly, but we can\n    // work around this. Let's use WP_HTML_Processor which has better support\n    // for understanding document structure.\n    \n    // Approach using WP_HTML_Tag_Processor:\n    // 1. Find all <script> tags\n    // 2. For each, we need to remove from <script...> to </script>\n    // Since WP_HTML_Tag_Processor treats script as a raw text element and\n    // skips its content, we need to track positions manually.\n    \n    // We'll use reflection or the updated_html approach with a workaround.\n    // Let's try using set_attribute to mark scripts, then remove them.\n    \n    // Most practical approach: collect byte offsets of script regions to remove.\n    \n    $regions_to_remove = [];\n    \n    // We need to find the byte positions of <script> tags.\n    // WP_HTML_Tag_Processor has internal bookmarks we can use.\n    \n    $offset = 0;\n    $result = $html;\n    \n    // Use a loop to find script tags by searching the string manually\n    // but NO - the requirement says no regex. Let's use WP_HTML_Tag_Processor properly.\n    \n    // WP_HTML_Tag_Processor approach:\n    // When we call next_tag('script'), it positions on the script tag.\n    // The processor knows where the tag starts internally.\n    // After calling next_tag() again, it will be past the </script>.\n    // We can use bookmarks to track positions.\n    \n    // Let's use the token-based approach if available, or use a creative solution.\n    \n    // Creative solution: Replace script tags with empty strings by:\n    // 1. Finding each script tag with WP_HTML_Tag_Processor\n    // 2. Adding a unique attribute to mark it\n    // 3. Getting the updated HTML\n    // 4. Then finding those markers and removing from marker to </script>\n    // But that still needs string ops for content removal.\n    \n    // Let's try WP_HTML_Processor which understands nesting and can remove elements.\n    \n    if (class_exists('WP_HTML_Processor')) {\n        // WP_HTML_Processor can handle full document structure\n        $proc = WP_HTML_Processor::create_fragment($html);\n        \n        if ($proc === null) {\n            // Fallback: try with WP_HTML_Tag_Processor only\n            return wpbp_strip_scripts_fallback($html);\n        }\n        \n        $bookmarks = [];\n        $bookmark_index = 0;\n        \n        // Find all script tags and collect their positions\n        while ($proc->next_tag()) {\n            if (strtoupper($proc->get_tag()) === 'SCRIPT') {\n                // Mark this script tag for removal by adding a data attribute\n                $marker = 'data-wpbp-remove-' . $bookmark_index;\n                $proc->set_attribute($marker, 'true');\n                $bookmark_index++;\n            }\n        }\n        \n        $marked_html = $proc->get_updated_html();\n        \n        // Now remove all marked script elements (tag + content + closing tag)\n        // Using WP_HTML_Tag_Processor to find the marked tags\n        // and then removing them from the string\n        \n        // We need to remove these script blocks. Since we can't use regex,\n        // let's find positions using strpos-based approach.\n        \n        for ($i = 0; $i < $bookmark_index; $i++) {\n            $marker = 'data-wpbp-remove-' . $i . '=\"true\"';\n            // This is getting complicated. Let's try a different approach entirely.\n        }\n    }\n    \n    return wpbp_strip_scripts_fallback($html);\n}\n\nfunction wpbp_strip_scripts_fallback($html) {\n    // Use WP_HTML_Tag_Processor to find script tags and track their positions\n    // by leveraging bookmarks and the internal state.\n    \n    // Strategy: Repeatedly find and remove one script block at a time.\n    // For each iteration:\n    // 1. Use WP_HTML_Tag_Processor to find the first <script> tag\n    // 2. Determine the start position of that tag\n    // 3. Find the corresponding </script> closing tag\n    // 4. Remove that entire region from the HTML string\n    // 5. Repeat until no more script tags\n    \n    $max_iterations = 1000; // Safety limit\n    $iteration = 0;\n    \n    while ($iteration < $max_iterations) {\n        $iteration++;\n        \n        $processor = new WP_HTML_Tag_Processor($html);\n        \n        if (!$processor->next_tag('SCRIPT')) {\n            // No more script tags found\n            break;\n        }\n        \n        // We found a script tag. Now we need to find where it starts and ends.\n        // WP_HTML_Tag_Processor doesn't expose byte offsets directly,\n        // but we can use a trick:\n        \n        // Trick: Insert a unique marker attribute, get updated HTML,\n        // then find the marker in the string to locate the tag.\n        \n        $unique_id = '___wpbp_script_marker_' . bin2hex(random_bytes(8)) . '___';\n        $processor->set_attribute('data-wpbp-marker', $unique_id);\n        $marked_html = $processor->get_updated_html();\n        \n        // Now find the position of our marker in the marked HTML\n        $marker_attr = 'data-wpbp-marker=\"' . $unique_id . '\"';\n        $marker_pos = strpos($marked_html, $marker_attr);\n        \n        if ($marker_pos === false) {\n            // Shouldn't happen, but safety check\n            break;\n        }\n        \n        // Find the opening '<' of this script tag by searching backwards\n        $tag_start = strrpos(substr($marked_html, 0, $marker_pos), '<');\n        \n        if ($tag_start === false) {\n            break;\n        }\n        \n        // Now we need to find the end of this script element.\n        // Script tags can be:\n        // 1. Self-closing (rare but possible): we just need to find '>'\n        // 2. Have content and a </script> closing tag\n        \n        // Find the end of the opening tag first\n        $opening_tag_end = strpos($marked_html, '>', $marker_pos);\n        \n        if ($opening_tag_end === false) {\n            break;\n        }\n        \n        // Check if it's a self-closing tag (e.g., <script ... />)\n        $opening_tag_content = substr($marked_html, $tag_start, $opening_tag_end - $tag_start + 1);\n        \n        // Look for the closing </script> tag after the opening tag\n        // We need to find </script> (case-insensitive)\n        $search_from = $opening_tag_end + 1;\n        $closing_tag_pos = wpbp_find_closing_script_tag($marked_html, $search_from);\n        \n        if ($closing_tag_pos !== false) {\n            // Find the end of the closing tag\n            $closing_tag_end = strpos($marked_html, '>', $closing_tag_pos);\n            if ($closing_tag_end === false) {\n                $closing_tag_end = strlen($marked_html) - 1;\n            }\n            $remove_end = $closing_tag_end + 1;\n        } else {\n            // No closing tag found; just remove the opening tag\n            $remove_end = $opening_tag_end + 1;\n        }\n        \n        // Now remove the script region from the ORIGINAL html.\n        // But we modified the html by adding the marker attribute.\n        // We need to map back to the original positions.\n        \n        // Better approach: just work with the marked_html and remove the region,\n        // but also remove our marker attribute. Actually, since we're removing\n        // the entire script block, the marker goes away too.\n        \n        $html = substr($marked_html, 0, $tag_start) . substr($marked_html, $remove_end);\n    }\n    \n    return $html;\n}\n\nfunction wpbp_find_closing_script_tag($html, $from) {\n    // Find </script> case-insensitively without regex\n    $len = strlen($html);\n    $search = '</script';\n    $search_len = strlen($search);\n    \n    $pos = $from;\n    while ($pos < $len) {\n        // Find the next '</' occurrence\n        $slash_pos = strpos($html, '</', $pos);\n        if ($slash_pos === false) {\n            return false;\n        }\n        \n        // Check if this is </script (case-insensitive)\n        $candidate = substr($html, $slash_pos, $search_len);\n        if (strtolower($candidate) === $search) {\n            // Verify the next char after '</script' is '>' or whitespace or end\n            $next_char_pos = $slash_pos + $search_len;\n            if ($next_char_pos < $len) {\n                $next_char = $html[$next_char_pos];\n                if ($next_char === '>' || $next_char === ' ' || $next_char === \"\\t\" || $next_char === \"\\n\" || $next_char === \"\\r\") {\n                    return $slash_pos;\n                }\n            } elseif ($next_char_pos === $len) {\n                return $slash_pos;\n            }\n        }\n        \n        $pos = $slash_pos + 1;\n    }\n    \n    return false;\n}\n\n// Redefine the main function with a cleaner implementation\nfunction wpbp_strip_scripts($html) {\n    $max_iterations = 1000;\n    $iteration = 0;\n    \n    while ($iteration < $max_iterations) {\n        $iteration++;\n        \n        $processor = new WP_HTML_Tag_Processor($html);\n        \n        if (!$processor->next_tag('SCRIPT')) {\n            break;\n        }\n        \n        // Use a unique marker to locate this script tag in the HTML string\n        $unique_marker = '___wpbp_rm_' . bin2hex(random_bytes(8)) . '___';\n        $processor->set_attribute('data-wpbp-rm', $unique_marker);\n        $marked_html = $processor->get_updated_html();\n        \n        $marker_str = 'data-wpbp-rm=\"' . $unique_marker . '\"';\n        $marker_pos = strpos($marked_html, $marker_str);\n        \n        if ($marker_pos === false) {\n            break;\n        }\n        \n        // Find the '<' that opens this script tag\n        $tag_start = strrpos(substr($marked_html, 0, $marker_pos), '<');\n        if ($tag_start === false) {\n            break;\n        }\n        \n        // Find end of opening tag\n        $opening_tag_end = strpos($marked_html, '>', $marker_pos);\n        if ($opening_tag_end === false) {\n            break;\n        }\n        \n        // Find closing </script> tag\n        $closing_pos = wpbp_find_closing_script_tag($marked_html, $opening_tag_end + 1);\n        \n        if ($closing_pos !== false) {\n            $closing_end = strpos($marked_html, '>', $closing_pos);\n            if ($closing_end === false) {\n                $closing_end = strlen($marked_html) - 1;\n            }\n            $remove_end = $closing_end + 1;\n        } else {\n            // No closing tag - just remove the opening tag\n            $remove_end = $opening_tag_end + 1;\n        }\n        \n        // Remove the script block from the marked HTML\n        $html = substr($marked_html, 0, $tag_start) . substr($marked_html, $remove_end);\n    }\n    \n    return $html;\n}\n```\n\nWait, I have a duplicate function definition. Let me provide a clean version:\n\n```php\n<?php\n\nfunction wpbp_strip_scripts($html) {\n    $max_iterations = 1000;\n    $iteration = 0;\n\n    while ($iteration < $max_iterations) {\n        $iteration++;\n\n        $processor = new WP_HTML_Tag_Processor($html);\n\n        if (!$processor->next_tag('SCRIPT')) {\n            break;\n        }\n\n        // Add a unique marker attribute so we can locate this tag in the string\n        $unique_marker = '___wpbp_rm_' . bin2hex(random_bytes(8)) . '___';\n        $processor->set_attribute('data-wpbp-rm', $unique_marker);\n        $marked_html = $processor->get_updated_html();\n\n        $marker_str = 'data-wpbp-rm=\"' . $unique_marker . '\"';\n        $marker_pos = strpos($marked_html, $marker_str);\n\n        if ($marker_pos === false) {\n            break;\n        }\n\n        // Find the '<' that opens this script tag\n        $tag_start = strrpos(substr($marked_html, 0, $marker_pos), '<');\n        if ($tag_start === false) {\n            break;\n        }\n\n        // Find end of opening tag '>'\n        $opening_tag_end = strpos($marked_html, '>', $marker_pos);\n        if ($opening_tag_end === false) {\n            break;\n        }\n\n        // Find the closing </script> tag\n        $closing_pos = wpbp_find_closing_script_tag($marked_html, $opening_tag_end + 1);\n\n        if ($closing_pos !== false) {\n            $closing_end = strpos($marked_html, '>', $closing_pos);\n            if ($closing_end === false) {\n                $closing_end = strlen($marked_html) - 1;\n            }\n            $remove_end = $closing_end + 1;\n        } else {\n            // No closing tag found; remove just the opening tag\n            $remove_end = $opening_tag_end + 1;\n        }\n\n        // Remove the entire script block\n        $html = substr($marked_html, 0, $tag_start) . substr($marked_html, $remove_end);\n    }\n\n    return $html;\n}\n\nfunction wpbp_find_closing_script_tag($html, $from) {\n    $len = strlen($html);\n    $pos = $from;\n\n    while ($pos < $len) {\n        $slash_pos = strpos($html, '</', $pos);\n        if ($slash_pos === false) {\n            return false;\n        }\n\n        $candidate = substr($html, $slash_pos, 9); // strlen('</script') === 9\n        if (strtolower($candidate) === '</script') {\n            $next_char_pos = $slash_pos + 9;\n            if ($next_char_pos >= $len) {\n                return $slash_pos;\n            }\n            $next_char = $html[$next_char_pos];\n            if ($next_char === '>' || $next_char === ' ' || $next_char === \"\\t\" || $next_char === \"\\n\" || $next_char === \"\\r\") {\n                return $slash_pos;\n            }\n        }\n\n        $pos = $slash_pos + 1;\n    }\n\n    return false;\n}",
+          "correctness": 0.0,
+          "quality": null
+        }
+      ]
+    },
+    "gpt-5.2": {
+      "config": {
+        "kind": "openai",
+        "name": "gpt-5.2",
+        "temperature": 0.0,
+        "max_tokens": null,
+        "top_p": null,
+        "request_timeout": 300.0
+      },
+      "scores": {
+        "knowledge": 0.9047619047619048,
+        "correctness": 0.4652791666666667,
+        "quality": 0.0,
+        "overall": 0.4575
+      },
+      "results": [
+        {
+          "test_id": "k-blockprocessor-attrs-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-abilities-003",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-abilities-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockprocessor-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-abilities-002",
+          "type": "knowledge",
+          "answer": "A",
+          "correct": false,
+          "score": 0.0
+        },
+        {
+          "test_id": "k-bindings-002",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-bindings-editor-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blocks-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-visibility-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockapi-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-accordion-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": false,
+          "score": 0.0
+        },
+        {
+          "test_id": "k-blockhooks-postcontent-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockhooks-context-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-bindings-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockhooks-multiple-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockhooks-context-002",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-transients-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-cache-salted-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-object-cache-found-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-dataviews-locked-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-blockhooks-ignored-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-dataviews-groupby-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-dataviews-getelements-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-dataviews-readonly-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-hooks-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-font-library-disable-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-meta-gotcha-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-hooks-002",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-html-serialize-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-hooks-003",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-html-script-reject-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-interactivity-attach-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-interactivity-module-001",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-utf8-fallback-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-interactivity-router-attr-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-queries-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-queries-002",
+          "type": "knowledge",
+          "answer": "C",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-rest-002",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-roles-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-security-001",
+          "type": "knowledge",
+          "answer": "A",
+          "correct": false,
+          "score": 0.0
+        },
+        {
+          "test_id": "k-security-002",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": true,
+          "score": 1.0
+        },
+        {
+          "test_id": "k-rest-001",
+          "type": "knowledge",
+          "answer": "B",
+          "correct": false,
+          "score": 0.0
+        },
+        {
+          "test_id": "e-bindings-001",
+          "type": "execution",
+          "code": "<?php\nadd_action(\n\t'init',\n\tstatic function () {\n\t\tregister_block_bindings_source(\n\t\t\t'myplugin/meta-caption',\n\t\t\tarray(\n\t\t\t\t'label'         => __( 'Featured Image Caption (Meta)', 'myplugin' ),\n\t\t\t\t'uses_context'   => array( 'postId' ),\n\t\t\t\t'get_value_callback' => static function ( $source_args, $block_instance, $context ) {\n\t\t\t\t\t$post_id = isset( $context['postId'] ) ? (int) $context['postId'] : 0;\n\t\t\t\t\tif ( ! $post_id ) {\n\t\t\t\t\t\treturn null;\n\t\t\t\t\t}\n\n\t\t\t\t\treturn get_post_meta( $post_id, 'featured_image_caption', true );\n\t\t\t\t},\n\t\t\t)\n\t\t);\n\t}\n);",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-abilities-001",
+          "type": "execution",
+          "code": "<?php\nadd_action('wp_abilities_api_categories_init', function () {\n\tif (function_exists('wp_register_ability_category')) {\n\t\twp_register_ability_category('site-tools', array(\n\t\t\t'label'       => __('Site Tools', 'textdomain'),\n\t\t\t'description' => __('Administrative tools for site maintenance.', 'textdomain'),\n\t\t\t'meta'        => array(\n\t\t\t\t'show_in_rest' => true,\n\t\t\t),\n\t\t));\n\t}\n});\n\nadd_action('wp_abilities_api_init', function () {\n\tif (function_exists('wp_register_ability')) {\n\t\twp_register_ability('site-tools/clear-cache', array(\n\t\t\t'label'       => __('Clear Cache', 'textdomain'),\n\t\t\t'description' => __('Clears site caches.', 'textdomain'),\n\t\t\t'category'    => 'site-tools',\n\t\t\t'permission_callback' => function () {\n\t\t\t\treturn current_user_can('manage_options');\n\t\t\t},\n\t\t\t'execute_callback' => function () {\n\t\t\t\treturn array('status' => 'cleared');\n\t\t\t},\n\t\t\t'meta' => array(\n\t\t\t\t'show_in_rest' => true,\n\t\t\t),\n\t\t));\n\t}\n});",
+          "correctness": 0.6667,
+          "quality": null
+        },
+        {
+          "test_id": "e-block-processor-count-001",
+          "type": "execution",
+          "code": "<?php\n/**\n * Count block types in HTML content using WP_Block_Processor (streaming parser).\n *\n * @param string $html\n * @return array<string,int>\n */\nfunction wpbp_count_block_types( $html ) {\n\t$counts = array();\n\n\tif ( ! is_string( $html ) || '' === $html ) {\n\t\treturn $counts;\n\t}\n\n\tif ( ! class_exists( 'WP_Block_Processor' ) ) {\n\t\treturn $counts;\n\t}\n\n\t$processor = new WP_Block_Processor( $html );\n\n\twhile ( $processor->next_block() ) {\n\t\t$block_name = $processor->get_block_name();\n\n\t\t// Skip empty names and freeform fallback.\n\t\tif ( empty( $block_name ) || 'core/freeform' === $block_name ) {\n\t\t\tcontinue;\n\t\t}\n\n\t\tif ( ! isset( $counts[ $block_name ] ) ) {\n\t\t\t$counts[ $block_name ] = 0;\n\t\t}\n\t\t$counts[ $block_name ]++;\n\n\t\t// Recurse into inner blocks (if any) and merge counts.\n\t\t$inner_html = $processor->get_inner_html();\n\t\tif ( is_string( $inner_html ) && '' !== $inner_html ) {\n\t\t\t$inner_counts = wpbp_count_block_types( $inner_html );\n\t\t\tforeach ( $inner_counts as $inner_name => $inner_count ) {\n\t\t\t\tif ( ! isset( $counts[ $inner_name ] ) ) {\n\t\t\t\t\t$counts[ $inner_name ] = 0;\n\t\t\t\t}\n\t\t\t\t$counts[ $inner_name ] += (int) $inner_count;\n\t\t\t}\n\t\t}\n\t}\n\n\treturn $counts;\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-block-hooks-conditional-001",
+          "type": "execution",
+          "code": "<?php\n/**\n * Plugin Name: Hooked CTA After Post Title (Posts Only)\n */\n\nadd_filter( 'hooked_block_types', function ( $hooked_block_types, $context ) {\n\tif ( ! is_single() || get_post_type() !== 'post' ) {\n\t\treturn $hooked_block_types;\n\t}\n\n\t$hooked_block_types['core/post-title']['after'][] = array(\n\t\t'block'  => 'core/paragraph',\n\t\t'attrs'  => array(\n\t\t\t'content' => 'Hooked CTA',\n\t\t),\n\t);\n\n\treturn $hooked_block_types;\n}, 10, 2 );",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-cache-false-hit-001",
+          "type": "execution",
+          "code": "<?php\n\nfunction wpbp_cached_flag() {\n\t$found = false;\n\t$flag  = wp_cache_get( 'flag', 'wpbp-cache-flag', false, $found );\n\n\tif ( $found ) {\n\t\treturn (bool) $flag;\n\t}\n\n\t$flag = false; // Computed value (can be false).\n\n\twp_cache_set( 'flag', $flag, 'wpbp-cache-flag' );\n\n\treturn (bool) $flag;\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-abilities-cache-001",
+          "type": "execution",
+          "code": "<?php\n/**\n * Plugin Name: Demo Abilities API - Get Movies\n */\n\nadd_action( 'wp_abilities_api_categories_init', function () {\n\tif ( function_exists( 'register_abilities_api_category' ) ) {\n\t\tregister_abilities_api_category(\n\t\t\t'demo',\n\t\t\tarray(\n\t\t\t\t'label'       => __( 'Demo', 'demo-abilities' ),\n\t\t\t\t'description' => __( 'Demo abilities.', 'demo-abilities' ),\n\t\t\t)\n\t\t);\n\t}\n} );\n\nadd_action( 'wp_abilities_api_init', function () {\n\tif ( ! function_exists( 'register_ability' ) ) {\n\t\treturn;\n\t}\n\n\tregister_ability(\n\t\t'demo/get-movies',\n\t\tarray(\n\t\t\t'category'            => 'demo',\n\t\t\t'label'               => __( 'Get Movies', 'demo-abilities' ),\n\t\t\t'description'         => __( 'Returns a cached list of published movie titles.', 'demo-abilities' ),\n\t\t\t'input_schema'        => array(\n\t\t\t\t'type'                 => 'object',\n\t\t\t\t'additionalProperties' => false,\n\t\t\t\t'properties'           => array(\n\t\t\t\t\t'genre' => array(\n\t\t\t\t\t\t'type'        => 'string',\n\t\t\t\t\t\t'description' => __( 'Optional genre slug.', 'demo-abilities' ),\n\t\t\t\t\t),\n\t\t\t\t),\n\t\t\t),\n\t\t\t'output_schema'       => array(\n\t\t\t\t'type'  => 'array',\n\t\t\t\t'items' => array(\n\t\t\t\t\t'type' => 'string',\n\t\t\t\t),\n\t\t\t),\n\t\t\t'permission_callback' => static function () {\n\t\t\t\treturn is_user_logged_in() && current_user_can( 'read' );\n\t\t\t},\n\t\t\t'meta'                => array(\n\t\t\t\t'show_in_rest' => true,\n\t\t\t),\n\t\t\t'callback'            => static function ( $input ) {\n\t\t\t\t$genre = '';\n\t\t\t\tif ( is_array( $input ) && isset( $input['genre'] ) && is_string( $input['genre'] ) ) {\n\t\t\t\t\t$genre = sanitize_title( $input['genre'] );\n\t\t\t\t}\n\n\t\t\t\t$last_changed = wp_cache_get_last_changed( 'posts' );\n\t\t\t\t$cache_key    = 'demo_get_movies:' . md5( $genre );\n\n\t\t\t\t$cached = wp_cache_get_salted( $cache_key, 'post-queries', $last_changed );\n\t\t\t\tif ( false !== $cached ) {\n\t\t\t\t\treturn $cached;\n\t\t\t\t}\n\n\t\t\t\t$args = array(\n\t\t\t\t\t'post_type'              => 'movie',\n\t\t\t\t\t'post_status'            => 'publish',\n\t\t\t\t\t'posts_per_page'         => -1,\n\t\t\t\t\t'fields'                 => 'ids',\n\t\t\t\t\t'orderby'                => 'title',\n\t\t\t\t\t'order'                  => 'ASC',\n\t\t\t\t\t'no_found_rows'          => true,\n\t\t\t\t\t'update_post_meta_cache' => false,\n\t\t\t\t\t'update_post_term_cache' => false,\n\t\t\t\t);\n\n\t\t\t\tif ( '' !== $genre ) {\n\t\t\t\t\t$args['tax_query'] = array(\n\t\t\t\t\t\tarray(\n\t\t\t\t\t\t\t'taxonomy' => 'genre',\n\t\t\t\t\t\t\t'field'    => 'slug',\n\t\t\t\t\t\t\t'terms'    => array( $genre ),\n\t\t\t\t\t\t),\n\t\t\t\t\t);\n\t\t\t\t}\n\n\t\t\t\t$ids    = get_posts( $args );\n\t\t\t\t$titles = array();\n\n\t\t\t\tforeach ( $ids as $post_id ) {\n\t\t\t\t\t$title = get_the_title( $post_id );\n\t\t\t\t\tif ( '' !== $title ) {\n\t\t\t\t\t\t$titles[] = $title;\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\twp_cache_set_salted( $cache_key, $titles, 'post-queries', $last_changed );\n\n\t\t\t\treturn $titles;\n\t\t\t},\n\t\t)\n\t);\n} );",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-cache-get-multiple-001",
+          "type": "execution",
+          "code": "<?php\n\nif ( ! function_exists( 'wpbp_get_options_cached' ) ) {\n\t/**\n\t * Fetch multiple options using object cache, filling cache misses from get_option().\n\t *\n\t * @param array $keys Option names.\n\t * @return array Map of option name => value.\n\t */\n\tfunction wpbp_get_options_cached( array $keys ): array {\n\t\t$keys = array_values( array_unique( array_filter( $keys, 'is_string' ) ) );\n\t\tif ( empty( $keys ) ) {\n\t\t\treturn [];\n\t\t}\n\n\t\t$group  = 'options';\n\t\t$misses = [];\n\n\t\t$cached = wp_cache_get_multiple( $keys, $group, false, $misses );\n\t\tif ( ! is_array( $cached ) ) {\n\t\t\t$cached = [];\n\t\t}\n\n\t\t$misses = is_array( $misses ) ? array_values( $misses ) : [];\n\t\tif ( empty( $misses ) ) {\n\t\t\treturn $cached;\n\t\t}\n\n\t\t$fetched = [];\n\t\tforeach ( $misses as $key ) {\n\t\t\t$fetched[ $key ] = get_option( $key );\n\t\t}\n\n\t\tif ( ! empty( $fetched ) ) {\n\t\t\twp_cache_set_multiple( $fetched, $group );\n\t\t}\n\n\t\treturn $cached + $fetched;\n\t}\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-font-library-disable-001",
+          "type": "execution",
+          "code": "<?php\n/**\n * Disable the Font Library UI everywhere (post editor + site editor).\n */\nadd_filter(\n\t'block_editor_settings_all',\n\tstatic function ( $settings ) {\n\t\t$settings['fontLibraryEnabled'] = false;\n\t\treturn $settings;\n\t},\n\t10,\n\t1\n);",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-meta-query-zero-001",
+          "type": "execution",
+          "code": "<?php\nfunction wpbp_zero_price_products() {\n\t$args = array(\n\t\t'post_type'      => 'product',\n\t\t'post_status'    => 'publish',\n\t\t'posts_per_page' => -1,\n\t\t'meta_query'     => array(\n\t\t\tarray(\n\t\t\t\t'key'     => 'price_cents',\n\t\t\t\t'value'   => 0,\n\t\t\t\t'compare' => '=',\n\t\t\t\t'type'    => 'NUMERIC',\n\t\t\t),\n\t\t),\n\t);\n\n\treturn new WP_Query( $args );\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-block-bindings-aria-001",
+          "type": "execution",
+          "code": "<?php\n/**\n * Plugin Name: Core Button Block Bindings: ariaLabel\n * Description: Extends Block Bindings for core/button to support binding ariaLabel to post meta and sanitizes output.\n * Version: 1.0.0\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n\texit;\n}\n\n/**\n * Allow ariaLabel to be bound for core/button.\n */\nadd_filter(\n\t'block_bindings_supported_attributes_core/button',\n\tfunction ( $supported_attributes ) {\n\t\tif ( ! is_array( $supported_attributes ) ) {\n\t\t\t$supported_attributes = array();\n\t\t}\n\n\t\tif ( ! in_array( 'ariaLabel', $supported_attributes, true ) ) {\n\t\t\t$supported_attributes[] = 'ariaLabel';\n\t\t}\n\n\t\treturn $supported_attributes;\n\t}\n);\n\n/**\n * Sanitize ariaLabel before output on the front end.\n */\nadd_filter(\n\t'render_block_core/button',\n\tfunction ( $block_content, $block ) {\n\t\tif ( is_admin() ) {\n\t\t\treturn $block_content;\n\t\t}\n\n\t\tif ( empty( $block['attrs'] ) || ! is_array( $block['attrs'] ) ) {\n\t\t\treturn $block_content;\n\t\t}\n\n\t\tif ( ! array_key_exists( 'ariaLabel', $block['attrs'] ) ) {\n\t\t\treturn $block_content;\n\t\t}\n\n\t\t$aria = $block['attrs']['ariaLabel'];\n\n\t\tif ( is_array( $aria ) || is_object( $aria ) ) {\n\t\t\treturn $block_content;\n\t\t}\n\n\t\t$aria = trim( (string) $aria );\n\t\tif ( $aria === '' ) {\n\t\t\treturn $block_content;\n\t\t}\n\n\t\t$aria = sanitize_text_field( $aria );\n\n\t\t$block_content = preg_replace(\n\t\t\t'/(<a\\b[^>]*)(>)/i',\n\t\t\t'$1 aria-label=\"' . esc_attr( $aria ) . '\"$2',\n\t\t\t$block_content,\n\t\t\t1\n\t\t);\n\n\t\treturn $block_content;\n\t},\n\t10,\n\t2\n);\n\n/**\n * Proof: register meta and inject a demo core/button block that binds both text and ariaLabel\n * to the same meta key via core/post-meta source.\n *\n * Visit any single post with ?bb_aria_demo=1 and set the meta key _bb_button_label.\n */\nadd_action(\n\t'init',\n\tfunction () {\n\t\tregister_post_meta(\n\t\t\t'',\n\t\t\t'_bb_button_label',\n\t\t\tarray(\n\t\t\t\t'type'              => 'string',\n\t\t\t\t'single'            => true,\n\t\t\t\t'show_in_rest'      => true,\n\t\t\t\t'sanitize_callback' => 'sanitize_text_field',\n\t\t\t\t'auth_callback'     => function () {\n\t\t\t\t\treturn current_user_can( 'edit_posts' );\n\t\t\t\t},\n\t\t\t)\n\t\t);\n\t}\n);\n\nadd_filter(\n\t'the_content',\n\tfunction ( $content ) {\n\t\tif ( ! is_singular() || ! isset( $_GET['bb_aria_demo'] ) ) {\n\t\t\treturn $content;\n\t\t}\n\n\t\t$block = array(\n\t\t\t'blockName' => 'core/button',\n\t\t\t'attrs'     => array(\n\t\t\t\t'url'          => home_url( '/' ),\n\t\t\t\t'text'         => 'Fallback text',\n\t\t\t\t'ariaLabel'    => 'Fallback aria',\n\t\t\t\t'metadata'     => array(\n\t\t\t\t\t'bindings' => array(\n\t\t\t\t\t\t'text'      => array(\n\t\t\t\t\t\t\t'source' => 'core/post-meta',\n\t\t\t\t\t\t\t'args'   => array(\n\t\t\t\t\t\t\t\t'key' => '_bb_button_label',\n\t\t\t\t\t\t\t),\n\t\t\t\t\t\t),\n\t\t\t\t\t\t'ariaLabel' => array(\n\t\t\t\t\t\t\t'source' => 'core/post-meta',\n\t\t\t\t\t\t\t'args'   => array(\n\t\t\t\t\t\t\t\t'key' => '_bb_button_label',\n\t\t\t\t\t\t\t),\n\t\t\t\t\t\t),\n\t\t\t\t\t),\n\t\t\t\t),\n\t\t\t),\n\t\t\t'innerBlocks' => array(),\n\t\t\t'innerHTML'   => '',\n\t\t\t'innerContent'=> array(),\n\t\t);\n\n\t\t$rendered = render_block( $block );\n\n\t\treturn $content . \"\\n\\n\" . $rendered;\n\t},\n\t20\n);",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-hooks-001",
+          "type": "execution",
+          "code": "<?php\nadd_filter( 'manage_posts_columns', function ( $columns ) {\n\t$columns['featured'] = esc_html__( 'Featured', 'textdomain' );\n\treturn $columns;\n} );\n\nadd_action( 'manage_posts_custom_column', function ( $column, $post_id ) {\n\tif ( 'featured' !== $column ) {\n\t\treturn;\n\t}\n\n\t$is_featured = get_post_meta( $post_id, '_is_featured', true );\n\techo esc_html( (string) $is_featured === '1' ? 'Yes' : 'No' );\n}, 10, 2 );",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-js-dataset-roundtrip-001",
+          "type": "execution",
+          "code": "<?php\nfunction wpbp_dataset_roundtrip( $prop ) {\n\t$attr = wp_html_custom_data_attribute_name( $prop );\n\t$prop = wp_js_dataset_name( $attr );\n\n\treturn array(\n\t\t'attr' => $attr,\n\t\t'prop' => $prop,\n\t);\n}",
+          "correctness": 0.5,
+          "quality": null
+        },
+        {
+          "test_id": "e-html-serialize-001",
+          "type": "execution",
+          "code": "<?php\nfunction wpbp_first_paragraph_html( $html ) {\n\tif ( ! is_string( $html ) || '' === $html ) {\n\t\treturn '';\n\t}\n\n\tif ( ! class_exists( 'WP_HTML_Processor' ) ) {\n\t\treturn '';\n\t}\n\n\t$processor = new WP_HTML_Processor( $html );\n\n\twhile ( $processor->next_token() ) {\n\t\tif ( 'tag' !== $processor->get_token_type() ) {\n\t\t\tcontinue;\n\t\t}\n\n\t\tif ( ! $processor->is_tag( 'p' ) ) {\n\t\t\tcontinue;\n\t\t}\n\n\t\tif ( ! $processor->is_tag_closer() ) {\n\t\t\treturn $processor->serialize_token();\n\t\t}\n\t}\n\n\treturn '';\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-html-safe-script-text-001",
+          "type": "execution",
+          "code": "<?php\nfunction wpbp_replace_script_text( $html, $replacement ) {\n\tif ( ! is_string( $html ) || ! is_string( $replacement ) ) {\n\t\treturn false;\n\t}\n\n\tif ( stripos( $replacement, '<script' ) !== false || stripos( $replacement, '</script' ) !== false ) {\n\t\treturn false;\n\t}\n\n\tif ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {\n\t\treturn false;\n\t}\n\n\t$processor = new WP_HTML_Tag_Processor( $html );\n\n\tif ( ! $processor->next_tag( array( 'tag_name' => 'script' ) ) ) {\n\t\treturn false;\n\t}\n\n\tif ( ! $processor->set_modifiable_text( $replacement ) ) {\n\t\treturn false;\n\t}\n\n\treturn $processor->get_updated_html();\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-html-first-url-001",
+          "type": "execution",
+          "code": "<?php\nfunction wpbp_first_url( $html ) {\n\t$url = get_url_in_content( $html );\n\n\tif ( is_array( $url ) ) {\n\t\t$url = reset( $url );\n\t}\n\n\treturn is_string( $url ) ? $url : '';\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-meta-001",
+          "type": "execution",
+          "code": "<?php\nfunction save_view_count( $post_id ) {\n\t$post_id = (int) $post_id;\n\n\t$current = get_post_meta( $post_id, '_view_count', true );\n\t$current = ( $current === '' || $current === null ) ? 0 : (int) $current;\n\n\t$new_count = $current + 1;\n\n\tupdate_post_meta( $post_id, '_view_count', $new_count );\n\n\treturn (int) $new_count;\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-html-strip-scripts-001",
+          "type": "execution",
+          "code": "<?php\n/**\n * Remove all <script> tags (inline and external) from an HTML string.\n *\n * @param string $html\n * @return string\n */\nfunction wpbp_strip_scripts( $html ) {\n\tif ( ! is_string( $html ) || $html === '' ) {\n\t\treturn $html;\n\t}\n\n\tif ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {\n\t\treturn $html;\n\t}\n\n\t$p = new WP_HTML_Tag_Processor( $html );\n\n\t$out  = '';\n\t$pos  = 0;\n\t$len  = strlen( $html );\n\n\twhile ( $p->next_tag() ) {\n\t\t$tag_start = $p->get_tag_start();\n\t\tif ( ! is_int( $tag_start ) || $tag_start < 0 ) {\n\t\t\tbreak;\n\t\t}\n\n\t\t// Append everything before this tag.\n\t\tif ( $tag_start > $pos ) {\n\t\t\t$out .= substr( $html, $pos, $tag_start - $pos );\n\t\t}\n\n\t\t$tag_name = strtoupper( (string) $p->get_tag() );\n\n\t\tif ( 'SCRIPT' === $tag_name ) {\n\t\t\t// Skip the entire <script ...>...</script> block (or just the tag if malformed).\n\t\t\t$tag_end = $p->get_tag_end();\n\t\t\tif ( ! is_int( $tag_end ) || $tag_end < $tag_start ) {\n\t\t\t\t$pos = $tag_start;\n\t\t\t\tcontinue;\n\t\t\t}\n\n\t\t\t$pos = $tag_end;\n\n\t\t\t// If this is an opening <script>, skip until its matching closing tag.\n\t\t\tif ( ! $p->is_tag_closer() ) {\n\t\t\t\twhile ( $p->next_tag( array( 'tag_name' => 'script' ) ) ) {\n\t\t\t\t\tif ( $p->is_tag_closer() ) {\n\t\t\t\t\t\t$close_end = $p->get_tag_end();\n\t\t\t\t\t\tif ( is_int( $close_end ) && $close_end >= 0 ) {\n\t\t\t\t\t\t\t$pos = $close_end;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tcontinue;\n\t\t}\n\n\t\t// Keep non-script tags as-is.\n\t\t$tag_end = $p->get_tag_end();\n\t\tif ( ! is_int( $tag_end ) || $tag_end < $tag_start ) {\n\t\t\t$pos = $tag_start;\n\t\t\tcontinue;\n\t\t}\n\n\t\t$out .= substr( $html, $tag_start, $tag_end - $tag_start );\n\t\t$pos  = $tag_end;\n\t}\n\n\t// Append any remaining tail.\n\tif ( $pos < $len ) {\n\t\t$out .= substr( $html, $pos );\n\t}\n\n\treturn $out;\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-interactivity-client-nav-001",
+          "type": "execution",
+          "code": "<?php\n/**\n * Plugin Name: Demo Nav Script Module\n */\n\nadd_action( 'init', function () {\n\t$src = plugins_url( 'assets/demo-nav.js', __FILE__ );\n\n\twp_register_script_module( 'demo/nav', $src, array(), '1.0.0' );\n\n\tif ( function_exists( 'wp_interactivity' ) ) {\n\t\twp_interactivity()->add_client_navigation_support_to_script_module( 'demo/nav' );\n\t}\n\n\twp_enqueue_script_module( 'demo/nav' );\n} );\n\nadd_action( 'wp_footer', function () {\n\twp_print_script_modules();\n}, 0 );\n\nadd_action( 'wp_footer', function () {\n\t$printed = false;\n\n\tforeach ( wp_scripts()->registered as $handle => $script ) {\n\t\tif ( 'demo/nav' === $handle && ! empty( $script->extra['wp-router-options'] ) ) {\n\t\t\t$options = $script->extra['wp-router-options'];\n\t\t\tif ( is_string( $options ) ) {\n\t\t\t\t$options = json_decode( $options, true );\n\t\t\t}\n\t\t\tif ( is_array( $options ) && ! empty( $options['loadOnClientNavigation'] ) ) {\n\t\t\t\t$printed = true;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t}\n\n\techo $printed ? \"<!-- data-wp-router-options contains loadOnClientNavigation:true -->\\n\" : \"<!-- missing/invalid data-wp-router-options -->\\n\";\n}, 1 );",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-interactivity-router-replace-001",
+          "type": "execution",
+          "code": "<?php\nfunction wpbp_router_link( $url, $text ) {\n\t$url  = (string) $url;\n\t$text = (string) $text;\n\n\t$rel = '';\n\n\t$home_url  = home_url( '/' );\n\t$home_host = wp_parse_url( $home_url, PHP_URL_HOST );\n\t$home_scheme = wp_parse_url( $home_url, PHP_URL_SCHEME );\n\n\t$link_host   = wp_parse_url( $url, PHP_URL_HOST );\n\t$link_scheme = wp_parse_url( $url, PHP_URL_SCHEME );\n\n\t$is_external = false;\n\n\tif ( ! empty( $link_host ) ) {\n\t\t$is_external = ( ! $home_host || strcasecmp( $link_host, $home_host ) !== 0 );\n\t} elseif ( ! empty( $link_scheme ) ) {\n\t\t$is_external = ( ! $home_scheme || strcasecmp( $link_scheme, $home_scheme ) !== 0 );\n\t}\n\n\tif ( $is_external ) {\n\t\t$rel = ' rel=\"nofollow\"';\n\t}\n\n\treturn sprintf(\n\t\t'<a href=\"%s\" data-wp-router-replace=\"true\" data-wp-router-prefetch=\"intent\"%s>%s</a>',\n\t\tesc_url( $url ),\n\t\t$rel,\n\t\tesc_html( $text )\n\t);\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-shortcode-001",
+          "type": "execution",
+          "code": "<?php\nfunction greeting_shortcode( $atts ) {\n\t$atts = shortcode_atts(\n\t\tarray(\n\t\t\t'name' => 'World',\n\t\t),\n\t\t$atts,\n\t\t'greeting'\n\t);\n\n\treturn esc_html( 'Hello, ' . $atts['name'] . '!' );\n}\nadd_shortcode( 'greeting', 'greeting_shortcode' );",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-rest-001",
+          "type": "execution",
+          "code": "<?php\nadd_action('rest_api_init', function () {\n\tregister_rest_route('myplugin/v1', '/status', array(\n\t\t'methods'             => WP_REST_Server::READABLE,\n\t\t'callback'            => function (WP_REST_Request $request) {\n\t\t\treturn new WP_REST_Response(array(\n\t\t\t\t'status'    => 'ok',\n\t\t\t\t'timestamp' => time(),\n\t\t\t), 200);\n\t\t},\n\t\t'permission_callback' => '__return_true',\n\t));\n});",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-html-ie-conditional-001",
+          "type": "execution",
+          "code": "<?php\n/**\n * Strip legacy IE conditional comments from HTML while leaving other comments intact.\n *\n * Identifies conditional comments by the pattern: <!--[if\n * Removes the entire block through the matching <![endif]-->\n * Does not use regex.\n *\n * @param string $html\n * @return string\n */\nfunction strip_ie_conditional_comments_with_tag_processor( string $html ): string {\n\t$processor = new WP_HTML_Tag_Processor( $html );\n\n\t$removals = [];\n\n\twhile ( $processor->next_token() ) {\n\t\tif ( '#comment' !== $processor->get_token_type() ) {\n\t\t\tcontinue;\n\t\t}\n\n\t\t$comment = $processor->get_modifiable_text();\n\t\tif ( ! is_string( $comment ) || '' === $comment ) {\n\t\t\tcontinue;\n\t\t}\n\n\t\t// Identify conditional comments by pattern <!--[if\n\t\tif ( 0 !== strpos( $comment, '<!--[if' ) ) {\n\t\t\tcontinue;\n\t\t}\n\n\t\t$start = $processor->get_token_start();\n\t\t$end   = $processor->get_token_end();\n\n\t\t// If this is a downlevel-hidden conditional comment, it ends at this comment token.\n\t\t// Example: <!--[if IE]> ... <![endif]-->\n\t\tif ( false !== strpos( $comment, '<![endif]-->' ) ) {\n\t\t\t$removals[] = [ $start, $end ];\n\t\t\tcontinue;\n\t\t}\n\n\t\t// Otherwise, it's likely downlevel-revealed:\n\t\t// <!--[if IE]><!--> ... <!--<![endif]-->\n\t\t// Remove from this opening comment through the closing <!--<![endif]--> comment.\n\t\t$found_end = false;\n\t\twhile ( $processor->next_token() ) {\n\t\t\tif ( '#comment' !== $processor->get_token_type() ) {\n\t\t\t\tcontinue;\n\t\t\t}\n\n\t\t\t$next_comment = $processor->get_modifiable_text();\n\t\t\tif ( is_string( $next_comment ) && false !== strpos( $next_comment, '<!--<![endif]-->' ) ) {\n\t\t\t\t$end        = $processor->get_token_end();\n\t\t\t\t$found_end  = true;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\n\t\tif ( $found_end ) {\n\t\t\t$removals[] = [ $start, $end ];\n\t\t} else {\n\t\t\t// No matching end found; remove only the opening comment token.\n\t\t\t$removals[] = [ $start, $processor->get_token_end() ];\n\t\t}\n\t}\n\n\tif ( empty( $removals ) ) {\n\t\treturn $html;\n\t}\n\n\t// Apply removals from end to start to keep offsets valid.\n\tfor ( $i = count( $removals ) - 1; $i >= 0; $i-- ) {\n\t\t$start = $removals[ $i ][0];\n\t\t$end   = $removals[ $i ][1];\n\t\t$html  = substr( $html, 0, $start ) . substr( $html, $end );\n\t}\n\n\treturn $html;\n}",
+          "correctness": 0.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-wpquery-001",
+          "type": "execution",
+          "code": "<?php\nfunction get_recent_news_posts() {\n\t$query = new WP_Query(\n\t\tarray(\n\t\t\t'post_type'           => 'post',\n\t\t\t'post_status'         => 'publish',\n\t\t\t'posts_per_page'      => 5,\n\t\t\t'orderby'             => 'date',\n\t\t\t'order'               => 'DESC',\n\t\t\t'category_name'       => 'news',\n\t\t\t'ignore_sticky_posts' => true,\n\t\t\t'no_found_rows'       => true,\n\t\t)\n\t);\n\n\t$posts = $query->posts;\n\n\twp_reset_postdata();\n\n\treturn $posts;\n}",
+          "correctness": 1.0,
+          "quality": null
+        },
+        {
+          "test_id": "e-rest-cache-salted-001",
+          "type": "execution",
+          "code": "<?php\n/**\n * Plugin Name: Demo Books REST Endpoint\n */\n\nadd_action( 'rest_api_init', function () {\n\tregister_rest_route(\n\t\t'demo/v1',\n\t\t'/books',\n\t\tarray(\n\t\t\t'methods'             => WP_REST_Server::READABLE,\n\t\t\t'callback'            => 'demo_v1_get_books',\n\t\t\t'permission_callback' => 'demo_v1_books_permission',\n\t\t)\n\t);\n} );\n\nfunction demo_v1_books_permission( WP_REST_Request $request ) {\n\tif ( is_user_logged_in() && current_user_can( 'read' ) ) {\n\t\treturn true;\n\t}\n\n\treturn new WP_Error(\n\t\t'rest_forbidden',\n\t\t__( 'Sorry, you are not allowed to access this resource.' ),\n\t\tarray( 'status' => rest_authorization_required_code() )\n\t);\n}\n\nfunction demo_v1_get_books( WP_REST_Request $request ) {\n\t$group = 'books-list';\n\t$key   = 'published-titles';\n\t$salt  = wp_cache_get_last_changed( 'posts' );\n\n\t$cached = wp_cache_get_salted( $key, $group, $salt );\n\tif ( false !== $cached ) {\n\t\treturn rest_ensure_response( $cached );\n\t}\n\n\t$q = new WP_Query(\n\t\tarray(\n\t\t\t'post_type'              => 'book',\n\t\t\t'post_status'            => 'publish',\n\t\t\t'posts_per_page'         => -1,\n\t\t\t'fields'                 => 'ids',\n\t\t\t'no_found_rows'          => true,\n\t\t\t'update_post_meta_cache' => false,\n\t\t\t'update_post_term_cache' => false,\n\t\t\t'orderby'                => 'title',\n\t\t\t'order'                  => 'ASC',\n\t\t)\n\t);\n\n\t$titles = array();\n\tforeach ( $q->posts as $post_id ) {\n\t\t$titles[] = get_the_title( $post_id );\n\t}\n\n\twp_cache_set_salted( $key, $titles, $group, $salt, MINUTE_IN_SECONDS * 10 );\n\n\treturn rest_ensure_response( $titles );\n}\n\nfunction demo_v1_invalidate_books_cache() {\n\t$group = 'books-list';\n\t$key   = 'published-titles';\n\t$salt  = wp_cache_get_last_changed( 'posts' );\n\n\twp_cache_delete_salted( $key, $group, $salt );\n}\n\nadd_action( 'save_post_book', 'demo_v1_invalidate_books_cache', 10, 0 );\nadd_action( 'deleted_post', 'demo_v1_invalidate_books_cache', 10, 0 );",
+          "correctness": 0.0,
+          "quality": null
+        }
+      ]
+    }
+  }
+}
