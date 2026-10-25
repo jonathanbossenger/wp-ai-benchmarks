@@ -16,6 +16,14 @@ npm run dev
 
 Open [http://localhost:5173/wp-ai-benchmarks/](http://localhost:5173/wp-ai-benchmarks/).
 
+## Updating the data
+
+```bash
+npm run prepare-data -- /path/to/wp-bench/output/results_YYYYMMDD_HHMMSS.json
+```
+
+This writes the slimmed dataset to `../results/data.json`. Pass a second argument to write somewhere else.
+
 ## Build
 
 ```bash

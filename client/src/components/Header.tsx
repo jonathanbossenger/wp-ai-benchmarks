@@ -23,7 +23,10 @@ export default function Header({ metadata }: Props) {
         <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-gray-400">
           <span>
             <span className="text-gray-500 mr-1">Grader</span>
-            <span className="text-gray-200">{metadata.grader.kind}</span>
+            <span className="text-gray-200">
+              {metadata.grader.kind}
+              {metadata.grader.database && ` · ${metadata.grader.database}`}
+            </span>
           </span>
           <span>
             <span className="text-gray-500 mr-1">Dataset</span>
@@ -33,10 +36,24 @@ export default function Header({ metadata }: Props) {
             <span className="text-gray-500 mr-1">Split</span>
             <span className="text-gray-200">{metadata.dataset.split}</span>
           </span>
-          <span>
-            <span className="text-gray-500 mr-1">Concurrency</span>
-            <span className="text-gray-200">{metadata.grader.concurrency}</span>
-          </span>
+          {metadata.wp_version && (
+            <span>
+              <span className="text-gray-500 mr-1">WordPress</span>
+              <span className="text-gray-200">{metadata.wp_version}</span>
+            </span>
+          )}
+          {metadata.scoring_version && (
+            <span>
+              <span className="text-gray-500 mr-1">Scoring</span>
+              <span className="text-gray-200">v{metadata.scoring_version}</span>
+            </span>
+          )}
+          {metadata.run_at && (
+            <span>
+              <span className="text-gray-500 mr-1">Run</span>
+              <span className="text-gray-200">{metadata.run_at.slice(0, 10)}</span>
+            </span>
+          )}
           <button
             onClick={toggleDark}
             className="ml-1 p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors"

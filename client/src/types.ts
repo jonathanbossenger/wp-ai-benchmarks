@@ -2,64 +2,70 @@ export interface ModelConfig {
   kind: string
   name: string
   temperature: number
-  max_tokens: number | null
-  top_p: number | null
-  request_timeout: number
 }
 
 export interface ModelScores {
-  knowledge: number
-  correctness: number
-  quality: number
+  correctness: number | null
+  execution_pass_rate: number | null
+  runtime: number | null
+  static_policy_pass_rate: number | null
   overall: number
 }
 
-export interface KnowledgeResult {
-  test_id: string
-  type: 'knowledge'
-  answer: string
-  correct: boolean
-  score: number
+export interface ModelUsage {
+  prompt_tokens: number
+  completion_tokens: number
+  total_tokens: number
+  estimated_cost_usd: number | null
+  median_latency_ms: number | null
+  p95_latency_ms: number | null
 }
 
-export interface ExecutionResult {
+export interface TestResult {
   test_id: string
-  type: 'execution'
-  code: string
-  correctness: number
-  quality: number | null
+  category: string
+  execution_pass: boolean
+  runtime: number | null
+  static: number | null
+  static_policy_pass: boolean | null
+  total_tokens: number | null
+  cost_usd: number | null
+  latency_ms: number | null
+  failures: string[]
 }
-
-export type TestResult = KnowledgeResult | ExecutionResult
 
 export interface ModelData {
+  base_model: string
+  variant: string
   config: ModelConfig
   scores: ModelScores
+  usage: ModelUsage
   results: TestResult[]
 }
 
 export interface Grader {
   kind: string
-  image: string
-  container_name: string
-  url: string | null
-  concurrency: number
+  database: string | null
   timeout_seconds: number
-  wp_env_dir: string
 }
 
 export interface Dataset {
   source: string
   name: string
-  revision: string | null
   split: string
-  cache_dir: string | null
 }
 
 export interface Metadata {
   suite: string
+  run_at: string | null
+  result_schema_version: string | null
+  scoring_version: string | null
+  wp_version: string | null
   grader: Grader
   dataset: Dataset
+  execution_concurrency: number | null
+  runtime_isolation: string | null
+  skills_enabled: boolean
 }
 
 export interface BenchmarkData {

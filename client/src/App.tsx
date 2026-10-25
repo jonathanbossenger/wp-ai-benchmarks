@@ -1,17 +1,22 @@
-import rawData from '../../sample.json'
+import rawData from '../../results/data.json'
 import type { BenchmarkData } from './types'
 import { ThemeProvider } from './context/theme'
 import Header from './components/Header'
 import ModelCard from './components/ModelCard'
 import ScoreChart from './components/ScoreChart'
+import CategoryBreakdown from './components/CategoryBreakdown'
 import ResultsTable from './components/ResultsTable'
 
 const data = rawData as BenchmarkData
-const modelEntries = Object.entries(data.models)
+// Rank models by overall score (the strict execution pass rate).
+const modelEntries = Object.entries(data.models).sort(
+  ([, a], [, b]) => b.scores.overall - a.scores.overall,
+)
 
 const COLOR_PALETTE = [
   '#3858e9', '#00b9eb', '#f59e0b', '#10b981',
   '#f43f5e', '#8b5cf6', '#f97316', '#06b6d4',
+  '#84cc16', '#ec4899',
 ]
 
 function getModelColors(count: number): string[] {
@@ -43,12 +48,14 @@ function App() {
                 key={name}
                 name={name}
                 model={model}
+                rank={index + 1}
                 color={modelColors[index]}
               />
             ))}
           </div>
-          <ScoreChart models={data.models} colors={modelColors} />
-          <ResultsTable models={data.models} />
+          <ScoreChart models={modelEntries} colors={modelColors} />
+          <CategoryBreakdown models={modelEntries} />
+          <ResultsTable models={modelEntries} />
         </main>
       </div>
     </ThemeProvider>

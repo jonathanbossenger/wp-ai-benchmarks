@@ -12,25 +12,23 @@ import type { ModelData } from '../types'
 import { useTheme } from '../context/theme'
 
 interface Props {
-  models: Record<string, ModelData>
+  models: [string, ModelData][]
   colors: string[]
 }
 
 const SCORE_CATEGORIES = [
-  { key: 'overall', label: 'Overall' },
-  { key: 'knowledge', label: 'Knowledge' },
-  { key: 'correctness', label: 'Correctness' },
-  { key: 'quality', label: 'Quality' },
+  { key: 'overall', label: 'Overall (pass rate)' },
+  { key: 'runtime', label: 'Runtime (partial)' },
+  { key: 'static_policy_pass_rate', label: 'Static policy' },
 ] as const
 
-export default function ScoreChart({ models, colors }: Props) {
+export default function ScoreChart({ models: modelEntries, colors }: Props) {
   const { isDark } = useTheme()
-  const modelEntries = Object.entries(models)
 
   const data = SCORE_CATEGORIES.map(({ key, label }) => {
     const entry: Record<string, string | number> = { category: label }
     modelEntries.forEach(([name, model]) => {
-      entry[name] = Math.round(model.scores[key] * 100)
+      entry[name] = Math.round((model.scores[key] ?? 0) * 1000) / 10
     })
     return entry
   })
@@ -44,7 +42,7 @@ export default function ScoreChart({ models, colors }: Props) {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
       <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Score Comparison</h2>
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={340}>
         <BarChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke={gridColor} />
           <XAxis dataKey="category" tick={{ fontSize: 13, fill: tickColor }} axisLine={false} tickLine={false} />
